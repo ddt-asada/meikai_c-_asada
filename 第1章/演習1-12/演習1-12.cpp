@@ -12,20 +12,19 @@ using namespace std;
 
 int main()
 {
-	//入力するための実数値の型。
-	double x, y;
+	double	dBase, dHeight;	//計算に使用する実数値の型。
 
 	//三角形の面積を求めることを表示。
-	cout <<"三角形の面積を求めます。\n";
+	cout	<<"三角形の面積を求めます。\n";
 
 	//三角形の底辺の入力を促す。
-	cout << "底辺：";
-	cin >> x;
+	cout	<<"底辺：";
+	cin		>>dBase;
 
 	//三角形の高さの入力を促す。
-	cout << "高さ：";
-	cin >> y;
+	cout	<<"高さ：";
+	cin		>>dHeight;
 
 	//三角形の面積を計算し、表示。
-	cout << "面積は" << x * y / 2 << "です。\n";
+	cout	<<"面積は"	<<dBase * dHeight / 2	<<"です。\n";
 }
