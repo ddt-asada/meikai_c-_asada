@@ -12,17 +12,21 @@ using namespace std;
 
 int main()
 {
-	double	a;	//double型の変数aを生成。
+	double	dSample;	//double型の変数dSampleを生成。
 
-	int		b;	//int型の変数bを生成。
+	int		Sample;		//int型の変数Sampleを生成。
 
-	/*代入演算子「=」は右結合のため、a=b=1.5は次のように解釈される。
-	 * a = (b = 1.5)
-	 * したがってまず初めにint型の変数bに1.5が代入される。この時、int型は整数型のため小数点以下は切り捨てられbには1が代入される。
-	 * 次に、double型の変数aにint型の変数bが代入される。この時先ほどの 1がbに代入されているため、aはa=1と解釈される。
+	/*代入演算子「=」は右結合のため、dSample = Sample = 1.5は次のように解釈される。
+	 * dSample = (Sample = 1.5)
+	 * したがってまず初めにint型の変数Sampleに1.5が代入される。この時、int型は整数型のため小数点以下は切り捨てられSampleには1が代入される。
+	 * 次に、double型の変数dSampleにint型の変数Sampleが代入される。この時先ほどの 1がSampleに代入されているため、dSampleはdSample=1と解釈される。
 	 */
-	a = b = 1.5;
+
+	dSample = Sample = 1.5;	//dSample = (Sample = 1.5)と解釈される。
 
 	//答えの確認のための表示。
-	cout	<< "double型の変数a：" << a << "\nint型の変数b：" << b << '\n';
+	cout	<<"double型の変数dSample："	<<dSample	<<"\nint型の変数Sample："	<<Sample	<<'\n';
+
+	//0を返す。
+	return 0;
 }
