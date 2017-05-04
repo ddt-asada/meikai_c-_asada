@@ -29,4 +29,7 @@ int main()
 
 	//三角形の面積を計算し、表示。
 	cout	<<"面積は"	<<dBase * dHeight / 2	<<"です。\n";
+
+	//0を返す。
+	return 0;
 }
