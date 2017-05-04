@@ -38,4 +38,7 @@ int main()
 		//「Com1とCom2は同じ値です。」と表示。
 		cout	<<"Com1とCom2は同じ値です。";
 	}
+
+	//0を返す。
+	return 0;
 }
