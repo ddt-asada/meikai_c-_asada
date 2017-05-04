@@ -12,23 +12,21 @@ using namespace std;
 
 int main()
 {
-	//実数値を読み込むための型。
-	double x, y;
+	double	dCal1, dCal2;	//計算に使う実数値の型。
 
-	//実数値xの入力を促す。
-	cout << "実数値x：";
-	//キーボードから実数値xを読み込む。
-	cin >> x;
+	//実数値dCal1の入力を促す。
+	cout	<<"実数値dCal：";
+	//キーボードから実数値dCal1を読み込む。
+	cin		>>dCal1;
 
-	//実数値yの入力を促す。
-	cout << "実数値y：";
-	//キーボードから実数値yを読み込む。
-	cin >> y;
+	//実数値dCal2の入力を促す。
+	cout	<<"実数値dCal2：";
+	//キーボードから実数値dCal2を読み込む。
+	cin		>>dCal2;
 
-	//実数値xとyの合計を表示。
-	cout << "合計は" << x + y << "です。\n";
+	//実数値dCal1とdCal2の合計を表示。
+	cout	<<"合計は"	<<dCal1 + dCal2			<<"です。\n";
 
-	//実数値xとyの平均を表示。
-	cout << "平均は" << (x + y) / 2 << "です。\n";
-
+	//実数値dCal1とdCal2の平均を表示。
+	cout	<<"平均は"	<<(dCal1 + dCal2) / 2	<<"です。\n";
 }
