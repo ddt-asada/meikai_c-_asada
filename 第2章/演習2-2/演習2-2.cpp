@@ -12,22 +12,21 @@ using namespace std;
 
 int main()
 {
-	//入力するための変数を生成。
-	int n;
+	int	Sample;	//値を調べたい整数の型。
 
-	//入力を促す。
-	cout << "整数値：";
-	cin >> n;
+	//値を調べたい整数の入力を促す。
+	cout	<<"整数値：";
+	cin		>>Sample;
 
 	//値が正の時は「その値は正です。」と表示。
-	if(n > 0) {
-		cout << "その値は正です。\n";
+	if(Sample > 0) {
+		cout	<<"その値は正です。\n";
 	//値が負の時は「その値は負です。」と表示。
-	} else if(n < 0) {
-		cout << "その値は負です。\n";
+	} else if(Sample < 0) {
+		cout	<<"その値は負です。\n";
 	//値が0の時は「その値は0です。」と表示。
-	} else if(n == 0) {
-		cout << "その値は0です。\n";
+	} else if(Sample == 0) {
+		cout	<<"その値は0です。\n";
 	}
 }
 
