@@ -29,4 +29,7 @@ int main()
 
 	//実数値dCal1とdCal2の平均を表示。
 	cout	<<"平均は"	<<(dCal1 + dCal2) / 2	<<"です。\n";
+
+	//0を返す。
+	return 0;
 }
