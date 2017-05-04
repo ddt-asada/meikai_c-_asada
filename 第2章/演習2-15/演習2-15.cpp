@@ -19,23 +19,26 @@ int main()
 	//乱数の種を時間を参照にする。
 	srand(time(NULL));
 
-	int hand = rand() % 7;	//0～6の範囲の乱数を生成し、じゃんけんの手の判定用の型に代入。
+	int	Fortune = rand() % 7;	//0～6の範囲の乱数を生成し、おみくじの判定用の型に代入。
 
 	//乱数の値に応じて結果を表示。
-	switch(hand) {
+	switch(Fortune) {
 	//0の時、末尾にswitch文から抜けるためのbreakを配置。
-	case 0		:	cout	<< "大吉\n";	break;
+	case 0		:	cout	<<"大吉\n";	break;
 	//1の時、末尾にswitch文から抜けるためのbreakを配置。
-	case 1		:	cout	<< "中吉\n";	break;
+	case 1		:	cout	<<"中吉\n";	break;
 	//2の時、末尾にswitch文から抜けるためのbreakを配置。
-	case 2		:	cout	<< "吉\n";		break;
+	case 2		:	cout	<<"吉\n";		break;
 	//3の時、末尾にswitch文から抜けるためのbreakを配置。
-	case 3		:	cout	<< "末吉\n";	break;
+	case 3		:	cout	<<"末吉\n";	break;
 	//4の時、末尾にswitch文から抜けるためのbreakを配置。
-	case 4		:	cout	<< "凶\n";		break;
+	case 4		:	cout	<<"凶\n";		break;
 	//5の時、末尾にswitch文から抜けるためのbreakを配置。
-	case 5		:	cout	<< "大凶\n";	break;
+	case 5		:	cout	<<"大凶\n";	break;
 	//上記に当てはまらない時、switch文最後のため、breakは配置しない。
-	default	:	cout	<< "小吉\n";
+	default	:	cout	<<"小吉\n";
 	}
+
+	//0を返す。
+	return 0;
 }
