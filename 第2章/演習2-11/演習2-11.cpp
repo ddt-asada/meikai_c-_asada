@@ -12,38 +12,48 @@ using namespace std;
 
 int main()
 {
-	//入力するための変数を生成。
-	int a, b, c;
+	int	med1, med2, med3;	//中央値を求めたい整数値の型。
 
-	//中央値を求めたい整数値の入力を促す。
-	cout	<< "整数値a：";
-	cin		>> a;
+	int	MED;				//中央値を判定するための型。
 
-	//中央値を求めたい整数値の入力を促す。
-	cout	<< "整数値b：";
-	cin		>> b;
+	//「整数値med1：」と表示。
+	cout	<<"整数値med1：";
+	//中央値を求めたい整数値の入力。
+	cin		>>med1;
 
-	//中央値を求めたい整数値の入力を促す。
-	cout	<< "整数値c：";
-	cin		>> c;
+	//「整数値med2：」と表示。
+	cout	<< "整数値med2：";
+	//中央値を求めたい整数値の入力。
+	cin		>> med2;
 
-	//判定用の変数medを生成し、aで初期化する。
-	int med = a;
+	//「整数値med3：」と表示。
+	cout	<< "整数値med3：";
+	//中央値を求めたい整数値の入力。
+	cin		>> med3;
 
-	//判定用の変数を用いて中央値を求める。。
-	if(c >= med && med >= b) {
-		med = b;
-	} else {
-		med = c;
+	//まず三つの整数値を昇順にソートする。
+	//med1とmed2を入れ替える。
+	if(med1	>= med2) {
+		MED  = med2;	//MEDにmed2を代入する。
+		med2 = med1;	//med2にmed1を代入する。
+		med1 = MED;		//med1にMEDを代入する。
 	}
 
-	//判定用の変数を用いて中央値を求める。
-	if(b >= med && med >= c) {
-		med = c;
-	} else {
-		med = b;
+	//med2とmed3を入れ替える。
+	if(med2	>= med3) {
+		MED  = med3;	//MEDにmed3を代入する。
+		med3 = med2;	//med3にmed2を代入する。
+		med2 = MED;		//med2にMEDを代入する。
 	}
 
-	//判定を抜けた変数med（すなわち三つの値の中央値）を表示する。
-	cout	<< "三つの値の中央値は" << med << "です。\n";
+	//med1とmed2を入れ替える。
+	if(med1	>= med2) {
+		MED  = med2;	//MEDにmed2を代入する。
+		med2 = med1;	//med2にmed1を代入する。
+		med1 = MED;		//med1にMEDを代入する。
+	}
+
+	//昇順に並べられた値の真ん中の数値が中央値である。
+	//真ん中の数字med2を表示する。
+	cout	<< "三つの値の中央値は" << med2 << "です。\n";
 }
