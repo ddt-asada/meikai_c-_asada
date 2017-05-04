@@ -33,6 +33,9 @@ int main()
 
 	//Cal1、Cal2、Cal3の平均値を表示。
 	cout	<<"平均は"		<<(Cal1 + Cal2 + Cal3) / 3 	<<"です。\n";
+
+	//0を返す。
+	return 0;
 }
 /*実行結果
  * Cal1の値は10です。
