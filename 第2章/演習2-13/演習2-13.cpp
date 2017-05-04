@@ -29,7 +29,7 @@ int main()
 	//二つの変数の大小を判定し降順に入れ替えるためのif文。
 	if(min1 < min2) {
 		MIN  = min1;	//仮の置き場MINにmin1を代入。
-		min1 = MIN;		//min1とmin2を交換。
+		min1 = min2;		//min1とmin2を交換。
 		min2 = MIN;		//min2にMIN（交換前のmin1）を代入。
 	}
 
@@ -40,4 +40,7 @@ int main()
 	cout	<<"変数min1は"	<<min1	<< "です。\n";
 	//「変数min2はmin2です。」と表示。
 	cout	<<"変数min2は"	<<min2	<< "です。\n";
+
+	//0を返す。
+	return 0;
 }
