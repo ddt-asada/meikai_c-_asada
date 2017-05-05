@@ -1,15 +1,30 @@
-//============================================================================
-// Name        : e_03_10.cpp
-// Author      : 
-// Version     :
-// Copyright   : Your copyright notice
-// Description : Hello World in C++, Ansi-style
-//============================================================================
+/*演習3-10
+ * 正の整数値を0からカウントアップするプログラム（for文使用）。
+ * 作成日：2017年5月1日
+ * 作成者：浅田　知嗣
+ * 更新日：2017年5月5日
+ * 更新者：浅田　知嗣
+ */
 
 #include <iostream>
+
 using namespace std;
 
-int main() {
-	cout << "!!!Hello World!!!" << endl; // prints !!!Hello World!!!
+int main()
+{
+	int	Countu;		//カウントアップの終わりの型。
+
+	//「整数値：」と表示。
+	cout	<<"整数値：";
+	//カウントアップの終わりの入力を促す。
+	cin		>>Countu;
+
+	//カウントアップするためのif文。
+	for(int i = 0; i <= Countu; i++) {
+		//一つカウントが進むごとに改行。
+		cout	<<i	<<'\n';
+	}
+
+	//0を返す。
 	return 0;
 }

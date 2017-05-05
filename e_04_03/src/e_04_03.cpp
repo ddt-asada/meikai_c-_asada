@@ -1,15 +1,7 @@
-//============================================================================
-// Name        : e_04_03.cpp
-// Author      : 
-// Version     :
-// Copyright   : Your copyright notice
-// Description : Hello World in C++, Ansi-style
-//============================================================================
+/*演習4-3
+ * 整数リテラル0が8進リテラルであることを論理的に説明せよ。
+ * 作成日：2017年5月2日
+ * 作成者：浅田　知嗣
+ */
 
-#include <iostream>
-using namespace std;
-
-int main() {
-	cout << "!!!Hello World!!!" << endl; // prints !!!Hello World!!!
-	return 0;
-}
+/*10進リテラルか8進リテラルかの区別をつけるため。*/

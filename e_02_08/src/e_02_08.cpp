@@ -1,15 +1,32 @@
-//============================================================================
-// Name        : e_02_08.cpp
-// Author      : 
-// Version     :
-// Copyright   : Your copyright notice
-// Description : Hello World in C++, Ansi-style
-//============================================================================
+/*演習2-8
+ * 二つの整数値の差を表示するプログラム。
+ * 作成日：2017年5月1日
+ * 作成者：浅田　知嗣
+ * 更新日：2017年5月4日
+ * 更新者：浅田　知嗣
+ */
 
 #include <iostream>
+
 using namespace std;
 
-int main() {
-	cout << "!!!Hello World!!!" << endl; // prints !!!Hello World!!!
+int main()
+{
+	int	Cal1, Cal2;	//差を求めたい整数の型。
+
+	//「整数値Cal1：」と表示。
+	cout	<<"整数値Cal1：";
+	//差を求めたい整数の入力。
+	cin		>>Cal1;
+
+	//「整数値Cal2：」と表示。
+	cout	<<"整数値Cal2：";
+	//差を求めたい整数の入力。
+	cin		>>Cal2;
+
+	//どちらが大きいかを判定し、大きいほうから小さいほうを引いた値を表示（すなわち、二値の差）。
+	cout	<<"二つの値の差は"	<<(Cal1 > Cal2 ? Cal1 - Cal2 : Cal2 - Cal1)	<<"です。\n";
+
+	//0を返す。
 	return 0;
 }

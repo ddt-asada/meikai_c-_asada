@@ -1,15 +1,32 @@
-//============================================================================
-// Name        : e_02_07.cpp
-// Author      : 
-// Version     :
-// Copyright   : Your copyright notice
-// Description : Hello World in C++, Ansi-style
-//============================================================================
+/*演習2-7
+ * 実数値の大小を判定するプログラム
+ * 作成日：2017年5月1日
+ * 作成者：浅田　知嗣
+ * 更新日：2017年5月4日
+ * 更新者：浅田　知嗣
+ */
 
 #include <iostream>
+
 using namespace std;
 
-int main() {
-	cout << "!!!Hello World!!!" << endl; // prints !!!Hello World!!!
+int main()
+{
+	int	Com1, Com2;	//大小を比較したい整数の型。
+
+	//「整数値Com1：」と表示。
+	cout	<<"整数値Com1：";
+	//大小を比較したい整数の入力。
+	cin		>>Com1;
+
+	//「整数値Com2：」と表示。
+	cout	<<"整数値Com2：";
+	//大小を比較したい整数の入力。
+	cin		>>Com2;
+
+	//読み込んだ値の大小を判定し、大きいほうを表示。
+	cout	<<"大きいのは"	<<(Com1 > Com2 ? Com1 : Com2)	<<"です。\n";
+
+	//0を返す。
 	return 0;
 }

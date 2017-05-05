@@ -1,15 +1,30 @@
-//============================================================================
-// Name        : e_03_09.cpp
-// Author      : 
-// Version     :
-// Copyright   : Your copyright notice
-// Description : Hello World in C++, Ansi-style
-//============================================================================
+/*演習3-9
+ * 正の整数値を0までカウントダウンするプログラム（for文使用）。
+ * 作成日：2017年5月1日
+ * 作成者：浅田　知嗣
+ * 更新日：2017年5月4日
+ * 更新者：浅田　知嗣
+ */
 
 #include <iostream>
+
 using namespace std;
 
-int main() {
-	cout << "!!!Hello World!!!" << endl; // prints !!!Hello World!!!
+int main()
+{
+	int	Countd;		//カウントダウンの始まりの整数の型。
+
+	//「整数値：」と表示。
+	cout	<<"整数値：";
+	//カウントダウンの始まりの入力。
+	cin		>>Contd;
+
+	//カウントダウンするための繰り返し文。
+	for(int i = Contd; i >= 0; i--) {
+		//カウントダウン中の数字を表示。
+		cout	<<i	<<'\n';
+	}
+
+	//0を返す。
 	return 0;
 }

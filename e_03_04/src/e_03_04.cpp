@@ -1,15 +1,41 @@
-//============================================================================
-// Name        : e_03_04.cpp
-// Author      : 
-// Version     :
-// Copyright   : Your copyright notice
-// Description : Hello World in C++, Ansi-style
-//============================================================================
+/*演習3-4
+ * List3-4のwhile文終了時にxの値が-1になることを確認できるように書き換えたプログラムを作成せよ。
+ * 作成日：2017年5月1日
+ * 作成者：浅田　知嗣
+ * 更新日：2017年5月4日
+ * 更新者：浅田　知嗣
+ */
 
 #include <iostream>
+
 using namespace std;
 
-int main() {
-	cout << "!!!Hello World!!!" << endl; // prints !!!Hello World!!!
+int main()
+{
+	int Countd;		//カウントダウンしたい整数の型。
+
+	//「カウントダウンします。」と表示。
+	cout	<<"カウントダウンします。\n";
+
+	//正の整数が入力されるまで繰り返すdo文
+	do{
+		//「正の整数値：」と表示。
+		cout	<<"正の整数値：";
+		//カウントダウンしたい整数の入力を促す。
+		cin		>>Countd;
+		//繰り返し条件として、正の整数以外が入力された時を指定。
+	}while(Countd <= 0);
+
+	//カウントダウンするためのwhile文
+	while(Countd >= 0){
+		//Countdの値を表示。
+		cout	<<Countd	<<"\n";
+		//Countdの値をカウントダウンしていく。
+		Countd--;
+	}
+	//while文を抜けたときのxがどのようになっているか確認するための出力。
+	cout	<<"終わった後のCountd："	<<Countd	<<'\n';
+
+	//0を返す。
 	return 0;
 }
