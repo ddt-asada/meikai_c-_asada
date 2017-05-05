@@ -13,20 +13,38 @@ using namespace std;
 int main()
 {
 	//int型の整数とdouble型の整数を生成する。
-	int a =10;
-	double b=0.1;
+	int 	Test =10;	//int型の整数値を10を初期化。。
+
+	double dTest =0.1;	//double型の整数値を0.1で初期化。
 
 	//それぞれの大きさと型を調べる。
-	cout <<"int + int の大きさ："<< sizeof(a+a)<<'\n';
-	cout <<"int + int の型："<< typeid(a+a).name()<<'\n';
-	cout <<"double + double の大きさ："<<sizeof(b+b)<<'\n';
-	cout <<"double + double の型："<<typeid (b + b). name() <<'\n';
-	cout <<"int + double の大きさ："<<sizeof(a+b)<<'\n';
-	cout <<"int + double の型："<<typeid(a+b).name()<<'\n';
-	cout <<"double + int の大きさ："<<sizeof(b+a)<<'\n';
-	cout <<"double + int の型："<<typeid(b+a).name()<<'\n';
-}
+	//int + intのバイト数を調べる。
+	cout	<<"int + intの大きさ："			<<sizeof(Test + Test)			<<'\n';
 
+	//int + intの型を調べる。
+	cout	<<"int + intの型："				<<typeid(Test + Test).name()	<<'\n';
+
+	//double + doubleのバイト数を調べる。
+	cout	<<"double + doubleの大きさ："	<<sizeof(dTest + dTest)		<<'\n';
+
+	//double + doubleの型を調べる。
+	cout	<<"double + doubleの型："		<<typeid(dTest + dTest).name()	<<'\n';
+
+	//int + doubletのバイト数を調べる。
+	cout	<<"int + doubleの大きさ："		<<sizeof(Test + dTest)			<<'\n';
+
+	//int + doubleの型を調べる。
+	cout	<<"int + doubleの型："			<<typeid(Test + dTest).name()	<<'\n';
+
+	//double + intの大きさを調べる。
+	cout	<<"double + intの大きさ："		<<sizeof(dTest + Test)			<<'\n';
+
+	//double + intの型を調べる。
+	cout	<<"double + intの型："			<<typeid(dTest + Test).name()	<<'\n';
+
+	//0を返す。
+	return 0;
+}
 /*実行結果は次のようになった。
  * int + int の大きさ：4
  *int + int の型：i
