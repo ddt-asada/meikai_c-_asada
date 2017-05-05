@@ -4,6 +4,8 @@
  * 横に並べて表示するプログラム。
  * 作成日：2017年5月2日
  * 作成者：浅田　知嗣
+ * 更新日：2017年5月5日
+ * 更新者：浅田　知嗣
  */
 
 #include <iostream>
@@ -14,24 +16,30 @@ using namespace std;
 
 int main()
 {
-	//インクリメントする整数値を0で初期化。
-	double i= 0;
+	double	dTest = 0;	//インクリメントする整数値を0で初期化。
 
 	//表を見やすくするため、setw操作子により10文字幅を確保。
-	cout << setw(10) << "float";
-	cout << setw(10) << "int\n";
+	//10文字の間隔に「float」と表示。
+	cout	<<setw(10)	<<"float";
+
+	//10文字の間隔に「int」と表示。
+	cout	<<setw(10)	<<"int\n";
+
 	//表題との境目。
-	cout << "-----------------\n";
+	cout	<<"-----------------\n";
 
 	//浮動小数点の精度を指定。
-	cout << fixed <<setprecision(6);
+	cout	<<	fixed	<<setprecision(6);
 
 	//0.001～1.000までの繰り返しを宣言。
-	for(float x = 0.0F; x <= 1.0F; x +=0.001F){
+	for(float fTest = 0.0F; fTest <= 1.0F; fTest += 0.001F) {
 		//見やすくするため10文字幅を確保。
-		cout << setw(10) << x;
+		cout	<<setw(10)	<<fTest;
 		//見やすくするため10文字幅を確保。
-		cout << setw(10) << (i/1000)<<'\n';
-		i++;
+		cout	<<setw(10)	<<(dTest/1000)	<<'\n';
+		dTest++;
 	}
+
+	//0を返す。
+	return 0;
 }
