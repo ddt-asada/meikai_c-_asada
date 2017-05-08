@@ -40,12 +40,12 @@ int main()
 	//範囲内の全整数を小さいほうから表示するためのdo文
 	do{
 		//範囲の下限値minを表示。
-		cout	<<Min	<<" \n";
+		cout	<<Min;
 		//Minに1を加える
 		Min++;
 		//MinとMaxが等しくなるまで、処理を繰り返す。
 		//後判定の繰り返し文につき、Min==Max+1とすることによりMin~～Maxまでの整数を表示させるまで繰り返す。
-	}while(Min != Max + 1);
+	}while(Min <= Max + 1);
 
 	//0を返す。
 	return 0;
