@@ -24,23 +24,23 @@ int main()
 		cin		>>type;
 	}
 
-	//終了以外の数値が入力されたときの分岐。
-	if(type != Invaild) {
-		//trump型の変数にstatic_castにより、入力した変数を文字に変換。
-		trump selected =static_cast<trump>(type);
+	//trump型の変数にstatic_castにより、入力した変数を文字に変換。
+	trump selected =static_cast<trump>(type);
 
-		//変数を列挙子に変換したものを用いて分岐。
-		switch(selected) {
-			//Diyaの時の分岐。
-			case Diya	:	cout	<<"ダイヤです\n";		break;
-			//Heartの時の分岐。
-			case Heart	:	cout	<<"ハートです。\n";		break;
-			//Clubの時の分岐。
-			case Club	:	cout	<<"クラブです。\n";		break;
-			//Spadeの時の分岐。
-			case Spade	:	cout	<<"スペードです。\n";	break;
-		}
+	//変数を列挙子に変換したものを用いて分岐。
+	switch(selected) {
+		//Diyaの時の分岐。
+		case Diya	:	cout	<<"ダイヤです\n";		break;
+		//Heartの時の分岐。
+		case Heart	:	cout	<<"ハートです。\n";		break;
+		//Clubの時の分岐。
+		case Club	:	cout	<<"クラブです。\n";		break;
+		//Spadeの時の分岐。
+		case Spade	:	cout	<<"スペードです。\n";	break;
+		//終了の時（1～4以外の数値がここに来ることはないのであえてdefaultではなくcaseではっきりと明示）。
+		case Invaild:										 ;
 	}
+
 
 	//0を返す。
 	return 0;
