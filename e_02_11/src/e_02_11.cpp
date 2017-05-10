@@ -4,6 +4,8 @@
  * 作成者：浅田　知嗣
  * 更新日：2017年5月4日
  * 更新者：浅田　知嗣
+ * 更新日：2017年5月9日
+ * 更新者：浅田　知嗣
  */
 
 #include <iostream>
@@ -14,7 +16,7 @@ int main()
 {
 	int	med1, med2, med3;	//中央値を求めたい整数値の型。
 
-	int	MED;				//中央値を判定するための型。
+	int	MED;				//求めた中央値を代入するための型。
 
 	//「整数値med1：」と表示。
 	cout	<<"整数値med1：";
@@ -31,31 +33,30 @@ int main()
 	//中央値を求めたい整数値の入力。
 	cin		>> med3;
 
-	//まず三つの整数値を昇順にソートする。
-	//med1とmed2を入れ替える。
-	if(med1	>= med2) {
-		MED  = med2;	//MEDにmed2を代入する。
-		med2 = med1;	//med2にmed1を代入する。
-		med1 = MED;		//med1にMEDを代入する。
+	//med1が中央値であるかどうかの比較を行う。
+	if(med1 >= med2 && med3 >= med1) {
+
+		MED = med1;	//中央値であればそれを採用する。
+
+	//med1が中央値かどうかの比較を行う。
+	} else if (med1 >= med3 && med2 >= med1) {
+
+		MED = med1;	//中央値であればそれを採用する。
+
+	//med2が中央値かどうかの比較を行う。
+	} else if (med2 >= med1 && med3 >= med2) {
+
+		MED = med2;	//中央値であればそれを採用する。
+
+	//med3が中央値であるかどうかの比較を行う。
+	} else if (med3 >= med2 && med1 >= med3) {
+
+		MED = med3;	//中央値であればそれを採用する。
+
 	}
 
-	//med2とmed3を入れ替える。
-	if(med2	>= med3) {
-		MED  = med3;	//MEDにmed3を代入する。
-		med3 = med2;	//med3にmed2を代入する。
-		med2 = MED;		//med2にMEDを代入する。
-	}
-
-	//med1とmed2を入れ替える。
-	if(med1	>= med2) {
-		MED  = med2;	//MEDにmed2を代入する。
-		med2 = med1;	//med2にmed1を代入する。
-		med1 = MED;		//med1にMEDを代入する。
-	}
-
-	//昇順に並べられた値の真ん中の数値が中央値である。
-	//真ん中の数字med2を表示する。
-	cout	<< "三つの値の中央値は" << med2 << "です。\n";
+	//求めた中央値MEDを表示する。
+	cout	<< "三つの値の中央値は" << MED << "です。\n";
 
 	//0を返す。
 	return 0;
