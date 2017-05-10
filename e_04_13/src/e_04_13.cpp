@@ -24,28 +24,27 @@ int main()
 		cin		>>type;
 	}
 
-	//終了が選択されたとき以外の分岐。
-	if(type != Invaild) {
 	//tint型変数をDay型変数に変換。
 	Day selected = static_cast<Day>(type);
 
-		//選択した曜日により分岐。
-		switch(selected) {
-			//月曜日の時の分岐。
-			case Mon	:cout	<<"今日は月曜日です。\n";	break;
-			//火曜日の時の分岐。
-			case Tues	:cout	<<"今日は火曜日です。\n";	break;
-			//水曜日の時の分岐。
-			case Wed	:cout	<<"今日は水曜日です。\n";	break;
-			//木曜日の時の分岐。
-			case Thu	:cout	<<"今日は木曜日です。\n";	break;
-			//金曜日の時の分岐。
-			case Fri	:cout	<<"今日は金曜日です。\n";	break;
-			//土曜日の時の分岐。
-			case Sat	:cout	<<"今日は土曜日です。\n";	break;
-			//日曜日の時の分岐。
-			case Sun	:cout	<<"今日は日曜日です。\n";	break;
-		}
+	//選択した曜日により分岐。
+	switch(selected) {
+		//月曜日の時の分岐。
+		case Mon	:cout	<<"今日は月曜日です。\n";	break;
+		//火曜日の時の分岐。
+		case Tues	:cout	<<"今日は火曜日です。\n";	break;
+		//水曜日の時の分岐。
+		case Wed	:cout	<<"今日は水曜日です。\n";	break;
+		//木曜日の時の分岐。
+		case Thu	:cout	<<"今日は木曜日です。\n";	break;
+		//金曜日の時の分岐。
+		case Fri	:cout	<<"今日は金曜日です。\n";	break;
+		//土曜日の時の分岐。
+		case Sat	:cout	<<"今日は土曜日です。\n";	break;
+		//日曜日の時の分岐。
+		case Sun	:cout	<<"今日は日曜日です。\n";	break;
+		//終了の時（1～8以外の数値がここに来ることはないのであえてdefaultではなくcaseではっきりと明示。
+		case Invaild:										 ;
 	}
 
 	//0を返す。
