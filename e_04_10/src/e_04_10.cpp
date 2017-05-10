@@ -16,7 +16,7 @@ using namespace std;
 
 int main()
 {
-	double	dTest = 0;	//インクリメントする整数値を0で初期化。
+	int	Test = 0;	//インクリメントするため整数値を0で初期化。
 
 	//表を見やすくするため、setw操作子により10文字幅を確保。
 	//10文字の間隔に「float」と表示。
@@ -33,11 +33,12 @@ int main()
 
 	//0.001～1.000までの繰り返しを宣言。
 	for(float fTest = 0.0F; fTest <= 1.0F; fTest += 0.001F) {
+		//int型の変数をダブル型に変換して代入。
 		//見やすくするため10文字幅を確保。
 		cout	<<setw(10)	<<fTest;
-		//見やすくするため10文字幅を確保。
-		cout	<<setw(10)	<<(dTest/1000)	<<'\n';
-		dTest++;
+		//見やすくするため10文字幅を確保。小数点以下の値が欲しいので型の変換を行う。
+		cout	<<setw(10)	<<static_cast<double>(Test)/1000	<<'\n';
+		Test++;
 	}
 
 	//0を返す。
