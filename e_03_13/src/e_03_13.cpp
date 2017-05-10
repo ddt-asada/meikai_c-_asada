@@ -4,9 +4,13 @@
  * 作成者：浅田　知嗣
  * 更新日：2017年5月5日
  * 更新者：浅田　知嗣
+ * 更新日：2017年5月9日
+ * 更新者：浅田　知嗣
  */
 
 #include <iostream>
+//操作子を利用するためのヘッダ。
+#include <iomanip>
 
 using namespace std;
 
@@ -32,12 +36,12 @@ int main()
 	cin		>>Interval;
 
 	//「身長	標準体重」と表示。
-	cout <<"身長	標準体重\n";
+	cout <<"身長　標準体重\n";
 
 	//Range1cmからRange2cmの範囲の標準体重をIntervalcmごとに表示するためのfor文
 	for(int i = Range1; i <= Range2; i += Interval) {
 		//身長とそれに対応した標準体重を出力。
-		cout	<<i	<<"		"	<<(i - 100) * 0.9	<<'\n';
+		cout	<<setw(3)	<<i	<<	"　　"	<<setw(5)	<<(i - 100) * 0.9	<<'\n';
 	}
 
 	//0を返す。
