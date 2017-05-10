@@ -4,6 +4,8 @@
  * 作成者：浅田　知嗣
  * 更新日：2017年5月5日
  * 更新者：浅田　知嗣
+ * 更新日：2017年5月9日
+ * 更新者：浅田　知嗣
  */
 
 #include <iostream>
@@ -17,35 +19,52 @@ using namespace std;
 int main()
 {
 	//「この処理系の文字と文字コード」と表示。
-	cout <<"この処理系の文字と文字コード\n";
+	cout <<"この処理系の文字種と文字コード\n";
 
 	//すべての文字種を表示するための無限ループ。
 	for (char i = 0; ; i++) {
-		//charが逆斜線文字を表す時の分岐。
+		//空白類文字を表示。
 		switch(i) {
-			//\\を二つ付けることにより、逆斜線文字を表示。
-			//文字コードが\aの時。
-			case '\a'	:	cout	<<"\\a";	break;
-			//文字コードが\bの時。
-			case '\b'	:	cout	<<"\\b";	break;
-			//文字コードが\fの時。
-			case '\f'	:	cout	<<"\\f";	break;
-			//文字コードが\nの時。
-			case '\n'	:	cout	<<"\\n";	break;
-			//文字コードが\rの時。
-			case '\r'	:	cout	<<"\\r";	break;
-			//文字コードが\tの時。
-			case '\t'	: 	cout	<<"\\t";	break;
-			//文字コードが\vの時。
-			case '\v'	:	cout	<<"\\v";	break;
-			//逆斜線文字以外の時の分岐（そのまま表示できる文字の時。）
-			//iが逆斜線文字以外かつ、そのまま表示できる文字の時はそのまま表示、それ以外は空欄とする。
-			default 	:	cout	<<' '	<<(isprint(i) ? i : ' ');
+		//空白類文字を表示。
+		case '\a'	:cout	<<"\\a";	break;
+		//空白類文字を表示。
+		case '\b'	:cout	<<"\\b";	break;
+		//空白類文字を表示。
+		case '\f'	:cout	<<"\\f";	break;
+		//空白類文字を表示。
+		case '\n'	:cout	<<"\\n";	break;
+		//空白類文字を表示。
+		case '\r'	:cout	<<"\\r";	break;
+		//空白類文字を表示。
+		case '\t'	:cout	<<"\\t";	break;
+		//空白類文字を表示。
+		case '\v'	:cout	<<"\\v";	break;
+		//空白類文字でないときは文字コードであるか判定し文字コードの場合文字コードを表示。
+		default		:cout	<<' '	<<(isprint(i) ? i : ' ');
 		}
 
-		//char型から整数型にキャストしたもの、すなわち文字の文字コードを10進数で表示。
-		cout	<<' '	<<dec	<<int(i)	<<'\n';
-
+		//文字コードのときの判定。
+		if(isprint(i) != 0) {
+			//返り値を調べる。
+			switch(isprint(i)) {
+			//1のときは英大文字と表示。
+			case 1		:cout	<<" 英大文字\n";	break;
+			//2のときは英子文字と表示。
+			case 2		:cout	<<" 英小文字\n";	break;
+			//4のときは数字と表示。
+			case 4		:cout	<<" 数字\n";		break;
+			//16のときは記号と表示。
+			case 16 	:cout	<<" 記号\n";		break;
+			}
+		//空白類文字の時
+		} else if (isspace(i) != 0) {
+			//空白類文字と表示。
+			cout	<<" 空白類文字\n";
+		//何もないとき
+		} else {
+			//空白と表示。
+			cout	<<" 空白\n";
+		}
 		//charが表しうるすべての文字コードが表示されたら無限ループを強制終了。
 		if(i == CHAR_MAX) break;
 	}
