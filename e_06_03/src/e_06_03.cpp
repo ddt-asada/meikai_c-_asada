@@ -1,8 +1,10 @@
-/*演習6-2
- * 三つのint型引数a,b,cの最小値を求める関数minを作成せよ。
+/*演習6-3
+ * 三つのint型引数a,b,cの中央値を求める関数minを作成せよ。
  * 作成日：2017年5月3日
  * 作成者：浅田　知嗣
  * 更新日：2017年5月7日
+ * 更新者：浅田　知嗣
+ * 更新日：2017年5月9日
  * 更新者：浅田　知嗣
  */
 
@@ -20,6 +22,8 @@ using namespace std;
  * 作成者：浅田　知嗣
  * 更新日：2017年5月7日
  * 更新者：浅田　知嗣
+ * 更新日：2017年5月9日
+ * 更新者：浅田　知嗣
  */
 
 //受け取った引数の中央値を返す関数。
@@ -28,40 +32,27 @@ int	med_of(int Med1, int Med2, int Med3)
 
 	int	MED;		//求めた中央値を代入する型。
 
-	int MIN = Med1;	//受け取った引数を昇順にソートするための型。
+	//Med1が中央値であるかどうかの比較を行う。
+	if(Med1 >= Med2 && Med3 >= Med1) {
 
-	//まず三つの整数値を昇順にソートする。
-	//Med1とMed2を比較する。
-	//Med1がMed2より大きいとき。
-	if(Med1	>= Med2) {
+		MED = Med1;	//中央値であればそれを採用する。
 
-		MIN  = Med2;	//MINにMed2を代入する。
-		Med2 = Med1;	//Med2にMed1を代入する。
-		Med1 = MIN;		//Med1にMINを代入する。
+	//Med1が中央値かどうかの比較を行う。
+	} else if (Med1 >= Med3 && Med2 >= Med1) {
 
-	}
+		MED = Med1;	//中央値であればそれを採用する。
 
-	//Med2とMed3を比較する。
-	//Med2がMed3より大きいとき。
-	if(Med2	>= Med3) {
+	//Med2が中央値かどうかの比較を行う。
+	} else if (Med2 >= Med1 && Med3 >= Med2) {
 
-		MIN  = Med3;	//MINにMed3を代入する。
-		Med3 = Med2;	//Med3にMed2を代入する。
-		Med2 = MIN;		//Med2にMINを代入する。
+		MED = Med2;	//中央値であればそれを採用する。
 
-	}
+	//Med3が中央値であるかどうかの比較を行う。
+	} else if (Med3 >= Med2 && Med1 >= Med3) {
 
-	//Med1とMed2を比較する。
-	//Med1がMed2より大きいとき。
-	if(Med1	>= Med2) {
-
-		MIN  = Med2;	//MINにMed2を代入する。
-		Med2 = Med1;	//Med2にMed1を代入する。
-		Med1 = MIN;		//Med1にMINを代入する。
+		MED = Med3;	//中央値であればそれを採用する。
 
 	}
-
-	MED = Med2;	//昇順に並べた中央の値が中央値であるのでそれを代入。
 
 	//求めた中央値を返す。
 	return MED;
