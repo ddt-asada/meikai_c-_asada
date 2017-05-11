@@ -93,7 +93,7 @@ int main()
 		//国語の合計点を表示。
 		cout	<<"国語の合計点は："	<<sumsubject[i][0]	<<"です。\n";
 		//国語の平均点の表示。
-		cout	<<"国語の合計点は："	<<sumsubject[i][0] / People	<<"です。\n";
+		cout	<<"国語の平均点は："	<<sumsubject[i][0] / People	<<"です。\n";
 	}
 
 	//各学年の英語の合計点と平均点を求める。
@@ -113,7 +113,7 @@ int main()
 		//英語の合計点を表示。
 		cout	<<"英語の合計点は："	<<sumsubject[i][1]	<<"です。\n";
 		//英語の平均点の表示。
-		cout	<<"英語の合計点は："	<<sumsubject[i][1] / People	<<"です。\n";
+		cout	<<"英語の平均点は："	<<sumsubject[i][1] / People	<<"です。\n";
 
 	}
 
