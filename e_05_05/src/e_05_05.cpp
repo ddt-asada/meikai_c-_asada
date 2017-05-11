@@ -31,10 +31,13 @@ int main()
 		//異なる要素と同じ値でどうかを確認する繰り返し。
 		for(int j = 0; j < i; j++) {
 
-			Array[i] = rand () % 10 +1;	//1～10の乱数を代入
-
 			//ほかの要素に同じ値があった場合はもう一度乱数を求める。
 			if(Array[i] == Array[j]) {
+				do {
+
+					Array[i] = rand () % 10 +1;
+
+				}while(Array[i] == Array[j]);
 
 				j = -1 ;
 			}
