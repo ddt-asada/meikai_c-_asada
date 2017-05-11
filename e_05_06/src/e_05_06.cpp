@@ -4,6 +4,8 @@
  * 作成者：浅田　知嗣
  * 更新日：2017年5月6日
  * 更新者：浅田　知嗣
+ * 更新日：2017年5月10日
+ * 更新者：浅田　知嗣
  */
 
 #include <iostream>
@@ -11,6 +13,8 @@
 #include <ctime>
 //C言語の関数ライブラリを利用するためのヘッダ。
 #include <cstdlib>
+//操作子を利用するためのヘッダ。
+#include <iomanip>
 
 using namespace std;
 
@@ -26,8 +30,8 @@ int main()
 
 		Array[i] = rand() % 10 + 1;		//乱数を代入。
 
-		//配列の中身を表示。
-		cout	<<"Array[ "	<<i	<<"]：";
+		//配列の中身を表示。きれいに並ぶようにsetw操作子を使用。
+		cout	<<"Array["	<<setw(3)	<<i	<<"]：";
 
 		//配列に入力された乱数の数だけ*を出力する繰り返し。
 		for(int j = 0; j < Array[i]; j++) {
