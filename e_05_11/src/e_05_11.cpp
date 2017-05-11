@@ -4,9 +4,15 @@
  * 作成者：浅田　知嗣
  * 更新日：2017年5月6日
  * 更新者：浅田　知嗣
+ * 更新日：2017年5月10日
+ * 更新者：浅田　知嗣
  */
 
 #include <iostream>
+//時間を参照するためのヘッダ。
+#include <ctime>
+//C言語ライブラリ関数を利用するためのヘッダ。
+#include <cstdlib>
 
 using namespace std;
 
@@ -17,94 +23,99 @@ int main()
 
 	const int	Subject = 2;	//科目数を宣言。
 
-	int			Score[6][2];	//6人分の2科目の点数を入れる配列を生成。
+	const int	Year = 2;		//学年を宣言。
 
-	int			Sum;			//合計点の型。
+	int			Score[Year][People][Subject];			//2学年6人分の2科目の点数を入れる配列を生成。
 
-	int			Ave;			//平均点の型。
+	int			sumpeople[Year][People] = {0};			//各学年の個人ごとの2科目の合計点の配列。
 
-	//点数の入力を促す。
-	cout	<<"点数を入力してください。\n";
+	int			sumsubject[Year][Subject] = {0};		//各科目の学年ごとの合計点の配列。
 
-	//配列に点数を入力する繰り返し。
-	//配列の行の移動。
-	for(int i = 0; i < People; i++) {
+	//乱数の種を時間に指定。
+	srand(time(NULL));
 
-		//何人目かを表示。
-		cout	<<i + 1	<<"人目\n";
+	//配列に点数を入力する繰り返し今回は値を入れたときに動くかを確認したいだけなので全要素に乱数を代入。
+	//学年の指定。
+	for(int i = 0; i < Year; i++) {
+		//人数の指定。
+		for(int j = 0; j < People; j++) {
+			//科目の指定。
+			for(int k = 0; k < Subject; k++) {
 
-		//国語の点数の入力。
-		cout	<<"国語：";
-		//点数を入力。
-		cin		>>Score[i][0];
+				Score[i][j][k] = rand() % 101;		//点数を0～100乱数により代入
 
-		//英語の点数の入力。
-		cout	<<"英語：";
-		//点数を入力。
-		cin		>>Score[i][1];
-
+			}
+		}
 	}
 
-	//学生ごとの合計点と平均点を求める。
-	for(int i = 0; i < People; i++) {
+	//各学年の学生ごとの合計点と平均点を求める。
+	for(int i = 0; i < Year; i++) {
 
-		//何人目かを表示。
-		cout	<<i + 1	<<"人目\n";
+		//学年を表示。
+		cout	<<i + 1	<<"年生\n";
 
-		//合計点を求める。
-		for(int j = 0; j < Subject; j++) {
+		//学生を選択。
+		for(int j = 0; j < People ; j++) {
 
-			Sum += Score[i][j];		//合計点を求める。
+			//何人目かを表示。
+			cout	<<j + 1	<<"人目\n";
+
+			//学生ごとの2科目の合計点を求める。
+			for(int k = 0; k < Subject; k++) {
+
+			sumpeople[i][j] += Score[i][j][k];		//合計点を求める。
+
+			}
+
+		//合計点の表示。
+		cout	<<"2科目の合計点は："	<<sumpeople[i][j]	<<"です。\n";
+
+		//平均点を表示。
+		cout	<<"2科目の平均点は："	<<sumpeople[i][j] / Subject	<<"です。\n";
+
+		}
+	}
+
+	//各学年の国語の合計点と平均点を求める。
+	//学年を選択。
+	for(int i = 0; i < Year; i++) {
+
+		//学年を表示。
+		cout	<<i + 1	<<"年生\n";
+
+		//学生を選択。
+		for(int j = 0; j < People; j++) {
+
+			sumsubject[i][0] += Score[i][j][0];		//国語の合計点を求める。
 
 		}
 
-		Ave = Sum / Subject;	//平均点を求める。
-
-		//合計点の表示。
-		cout	<<"合計点は："	<<Sum	<<"です。\n";
-
-		//平均点を表示。
-		cout	<<"平均点は："	<<Ave	<<"です。\n";
-
-		Sum = 0;	//合計点を初期化。
-
-		Ave = 0;	//平均点を初期化。
-
+		//国語の合計点を表示。
+		cout	<<"国語の合計点は："	<<sumsubject[i][0]	<<"です。\n";
+		//国語の平均点の表示。
+		cout	<<"国語の合計点は："	<<sumsubject[i][0] / People	<<"です。\n";
 	}
 
-	//国語の合計点を求める。
-	for(int i = 0; i < People; i++) {
+	//各学年の英語の合計点と平均点を求める。
+	//学年を選択。
+	for(int i = 0; i < Year; i++) {
 
-		Sum += Score[i][0];	//国語の合計点を求める。
+		//学年を表示。
+		cout	<<i + 1	<<"年生\n";
 
-	}
+		//学生を選択。
+		for(int j = 0; j < People; j++) {
 
-	Ave = Sum / People;	//国語の平均点を求める。
+			sumsubject[i][1] += Score[i][j][1];		//英語の合計点を求める。
 
-	//合計点の表示。
-	cout	<<"国語の合計点は："	<<Sum	<<"です。\n";
+		}
 
-	//平均点の表示。
-	cout	<<"国語の平均点は："	<<Ave	<<"です。\n";
-
-	Sum = 0;	//合計点を初期化。
-
-	Ave = 0;		//平均点を初期化。
-
-	//英語の合計点を求める。
-	for(int i = 0; i < People; i++) {
-
-		Sum += Score[i][1];	//合計点を求める。
+		//英語の合計点を表示。
+		cout	<<"英語の合計点は："	<<sumsubject[i][1]	<<"です。\n";
+		//英語の平均点の表示。
+		cout	<<"英語の合計点は："	<<sumsubject[i][1] / People	<<"です。\n";
 
 	}
-
-	Ave = Sum / People;		//英語の平均点を求める。
-
-	//合計点の表示。
-	cout	<<"英語の合計点は："	<<Sum	<<"です。\n";
-
-	//平均点の表示。
-	cout	<<"英語の平均点は："	<<Ave	<<"です。\n";
 
 	//0を返す。
 	return 0;
