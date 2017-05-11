@@ -35,14 +35,18 @@ int main()
 
 void count_digits(const char* Digits, int Num[])
 {
+	char key[] = "0123456789";	//走査用の文字を宣言。
+
 	//0～9の数字がどこにあるか調べるための繰り返し。
 	for(int i = 0; i < 10; i++) {
-		char k = static_cast<char>(i);
+
 		//文字列を走査するための繰り返し。
 		for(int j = 0; Digits[j] > 0 ; j++) {
-			if(Digits[j] == static_cast<char>(i)) {
+			//同じ文字があったとき。
+			if(Digits[j] == key[i]) {
 
-				Num[i]++;
+				Num[i]++;	//見つけた数だけカウントする。
+
 			}
 		}
 
