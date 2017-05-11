@@ -4,6 +4,10 @@
  * 作成者：浅田　知嗣
  * 更新日：2017年5月8日
  * 更新者：浅田　知嗣
+ * 更新日：2017年5月9日
+ * 更新者：浅田　知嗣
+ * 更新日：2017年5月10日
+ * 更新者：浅田　知嗣
  */
 
 #include <iostream>
@@ -14,12 +18,83 @@
 
 using namespace std;
 
+
+//関数宣言。
+int confirm_retry();
+
+//関数宣言。
+void QUESTION1(int Cal1, int Cal2, int Cal3);
+
+//関数宣言。
+void QUESTION2(int Cal1, int Cal2, int Cal3);
+
+//関数宣言。
+void QUESTION3(int Cal1, int Cal2, int Cal3);
+
+//関数宣言。
+void QUESTION4(int Cal1, int Cal2, int Cal3);
+
+int main()
+{
+	//乱数の種を時間により決定する。
+	srand(time(NULL));
+
+	//暗算トレーニングの開始を宣言する。
+	cout	<<"暗算トレーニング開始！！\n";
+
+	//ユーザーが終了を選択するまで繰り返す。
+	do {
+
+		int Cal1 = rand() % 900 + 100;	//問題に使用する3桁の乱数を生成する。
+
+		int Cal2 = rand() % 900 + 100;	//問題に使用する3桁の乱数を生成する。
+
+		int Cal3 = rand() % 900 + 100;	//問題に使用する3桁の乱数を生成する。
+
+		int Question = rand() % 4;		//問題を決定するための0～3の乱数を生成する。
+
+		//問題の種類によって分岐。
+		//Questionが0の時。
+		if(Question == 0) {
+
+			//Cal1＋Cal2＋Cal3の問題を呼び出す関数。
+			QUESTION1(Cal1, Cal2, Cal3);
+
+		//Questionが1の時。
+		} else if (Question == 1) {
+
+			//Cal1＋Cal2-Cal3の問題を呼び出す関数。
+			QUESTION2(Cal1, Cal2, Cal3);
+
+		//Questionが2の時。
+		} else if (Question == 2) {
+
+			//Cal1-Cal2＋Cal3の問題をよびだす関数。
+			QUESTION3(Cal1, Cal2, Cal3);
+
+		//Questionが3の時。
+		} else if (Question == 3) {
+
+			//Cal1-Cal2-Cal3の問題を呼び出す関数。
+			QUESTION4(Cal1, Cal2, Cal3);
+
+		}
+	} while (confirm_retry() != 0);
+
+	//0を返す。
+	return 0;
+}
+
 /*関数名：bool confirm_retry();
  * キーボードから1または0を読み込み（1または0以外が入力された場合は再入力させる）返却する関数。
  * 返却値retry;キーボードから入力された1または0を返却する。
  * 作成日：2017年5月3日
  * 作成者：浅田　知嗣
  * 更新日：2017年5月8日
+ * 更新者：浅田　知嗣
+ * 更新日：2017年5月9日
+ * 更新者：浅田　知嗣
+ * 更新日：2017年5月10日
  * 更新者：浅田　知嗣
  */
 
@@ -49,6 +124,10 @@ int confirm_retry()
  * 作成日：2017年5月3日
  * 作成者：浅田　知嗣
  * 更新日：2017年5月8日
+ * 更新者：浅田　知嗣
+ * 更新日：2017年5月9日
+ * 更新者：浅田　知嗣
+ * 更新日：2017年5月10日
  * 更新者：浅田　知嗣
  */
 
@@ -90,6 +169,10 @@ void QUESTION1(int Cal1, int Cal2, int Cal3)
  * 作成者：浅田　知嗣
  * 更新日：2017年5月8日
  * 更新者：浅田　知嗣
+ * 更新日：2017年5月9日
+ * 更新者：浅田　知嗣
+ * 更新日：2017年5月10日
+ * 更新者：浅田　知嗣
  */
 
 //問題を掲示し、正解するまで繰り返す関数。
@@ -129,6 +212,10 @@ void QUESTION2(int Cal1, int Cal2, int Cal3)
  * 作成日：2017年5月3日
  * 作成者：浅田　知嗣
  * 更新日：2017年5月8日
+ * 更新者：浅田　知嗣
+ * 更新日：2017年5月9日
+ * 更新者：浅田　知嗣
+ * 更新日：2017年5月10日
  * 更新者：浅田　知嗣
  */
 
@@ -170,6 +257,10 @@ void QUESTION3(int Cal1, int Cal2, int Cal3)
  * 作成者：浅田　知嗣
  * 更新日：2017年5月8日
  * 更新者：浅田　知嗣
+ * 更新日：2017年5月9日
+ * 更新者：浅田　知嗣
+ * 更新日：2017年5月10日
+ * 更新者：浅田　知嗣
  */
 
 //問題を掲示し、正解するまで繰り返す関数。
@@ -198,56 +289,4 @@ void QUESTION4(int Cal1, int Cal2, int Cal3)
 			cout	<<"不正解です。\n";
 		}
 	}
-}
-
-
-int main()
-{
-	//乱数の種を時間により決定する。
-	srand(time(NULL));
-
-	//暗算トレーニングの開始を宣言する。
-	cout	<<"暗算トレーニング開始！！\n";
-
-	//ユーザーが終了を選択するまで繰り返す。
-	for( ; confirm_retry() != 0; ) {
-
-		int Cal1 = rand() % 900 + 100;	//問題に使用する3桁の乱数を生成する。
-
-		int Cal2 = rand() % 900 + 100;	//問題に使用する3桁の乱数を生成する。
-
-		int Cal3 = rand() % 900 + 100;	//問題に使用する3桁の乱数を生成する。
-
-		int Question = rand() % 4;		//問題を決定するための0～3の乱数を生成する。
-
-		//問題の種類によって分岐。
-		//Questionが0の時。
-		if(Question == 0) {
-
-			//Cal1＋Cal2＋Cal3の問題を呼び出す関数。
-			QUESTION1(Cal1, Cal2, Cal3);
-
-		//Questionが1の時。
-		} else if (Question == 1) {
-
-			//Cal1＋Cal2-Cal3の問題を呼び出す関数。
-			QUESTION2(Cal1, Cal2, Cal3);
-
-		//Questionが2の時。
-		} else if (Question == 2) {
-
-			//Cal1-Cal2＋Cal3の問題をよびだす関数。
-			QUESTION3(Cal1, Cal2, Cal3);
-
-		//Questionが3の時。
-		} else if (Question == 3) {
-
-			//Cal1-Cal2-Cal3の問題を呼び出す関数。
-			QUESTION4(Cal1, Cal2, Cal3);
-
-		}
-	}
-
-	//0を返す。
-	return 0;
 }
