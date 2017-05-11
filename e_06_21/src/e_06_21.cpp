@@ -2,114 +2,31 @@
  * それぞれのデータ型の変数の絶対値を求めるたじゅ定義された関数群を作成する。
  * 作成日：2017年5月8日
  * 作成者：浅田　知嗣
+ * 更新日：2017年5月10日
+ * 更新者：浅田　知嗣
  */
 
 #include <iostream>
 
 using namespace std;
 
-/*関数名：short absolute(short abs)
- * short型の整数absの絶対値を求める関数。
- * 引数abs：絶対値を求めたいshort型の整数。
- * 返却値：絶対値。
- * 作成日：2017年5月8日
- * 作成者：浅田　知嗣
- */
+//関数宣言。
+short absolute(short abs);
 
-short absolute(short abs)
-{
-	//受け取った引数の絶対値を返す。
-	return abs < 0 ? -abs : abs;
+//関数宣言。
+int absolute(int abs);
 
-}
+//関数宣言。
+long absolute(long abs);
 
-/*関数名：int absolute(int abs)
- * int型の整数absの絶対値を求める関数。
- * 引数abs：絶対値を求めたいint型の整数。
- * 返却値：絶対値。
- * 作成日：2017年5月8日
- * 作成者：浅田　知嗣
- */
+//関数宣言。
+float absolute(float abs);
 
-int absolute(int abs)
-{
+//関数宣言。
+double absolute(double abs);
 
-	abs *= 2;	//この関数が読み込まれたことを判別するために引数に2倍をかける。
-
-	//受け取った引数の絶対値を返す。
-	return abs < 0 ? -abs : abs;
-
-}
-
-/*関数名：long absolute(long abs)
- * long型の整数absの絶対値を求める関数。
- * 引数abs：絶対値を求めたいlong型の整数。
- * 返却値：絶対値。
- * 作成日：2017年5月8日
- * 作成者：浅田　知嗣
- */
-
-long absolute(long abs)
-{
-
-	abs *= 3;	//この関数が読み込まれたことを判別するために引数に3倍をかける。
-
-	//受け取った引数の絶対値を返す。
-	return abs < 0 ? -abs : abs;
-
-}
-
-/*関数名：float absolute(float abs)
- * float型の整数absの絶対値を求める関数。
- * 引数abs：絶対値を求めたいfloat型の整数。
- * 返却値：絶対値。
- * 作成日：2017年5月8日
- * 作成者：浅田　知嗣
- */
-
-float absolute(float abs)
-{
-
-	abs *= 4;	//この関数が読み込まれたことを判別するために引数に4倍をかける。
-
-	//受け取った引数の絶対値を返す。
-	return abs < 0 ? -abs : abs;
-
-}
-
-/*関数名：double absolute(double abs)
- * double型の整数absの絶対値を求める関数。
- * 引数abs：絶対値を求めたいdouble型の整数。
- * 返却値：絶対値。
- * 作成日：2017年5月8日
- * 作成者：浅田　知嗣
- */
-
-double absolute(double abs)
-{
-	abs *= 5;	//この関数が読み込まれたことを判別するために引数に5倍をかける。
-
-	//受け取った引数の絶対値を返す。
-	return abs < 0 ? -abs : abs;
-
-}
-
-/*関数名：long double absolute(long double abs)
- * long double型の整数absの絶対値を求める関数。
- * 引数abs：絶対値を求めたいlong double型の整数。
- * 返却値：絶対値。
- * 作成日：2017年5月8日
- * 作成者：浅田　知嗣
- */
-
-long double absolute(long double abs)
-{
-	abs *= 6;	//この関数が読み込まれたことを判別するために引数に6倍をかける。
-
-	//受け取った引数の絶対値を返す。
-	return abs < 0 ? -abs : abs;
-
-}
+//関数宣言。
+long double absolute(long double abs);
 
 int main()
 {
@@ -146,6 +63,121 @@ int main()
 
 	//0を返す。
 	return 0;
+}
+
+/*関数名：short absolute(short abs)
+ * short型の整数absの絶対値を求める関数。
+ * 引数abs：絶対値を求めたいshort型の整数。
+ * 返却値：絶対値。
+ * 作成日：2017年5月8日
+ * 作成者：浅田　知嗣
+ * 更新日：2017年5月10日
+ * 更新者：浅田　知嗣
+ */
+
+short absolute(short abs)
+{
+	//受け取った引数の絶対値を返す。
+	return abs < 0 ? -abs : abs;
+
+}
+
+/*関数名：int absolute(int abs)
+ * int型の整数absの絶対値を求める関数。
+ * 引数abs：絶対値を求めたいint型の整数。
+ * 返却値：絶対値。
+ * 作成日：2017年5月8日
+ * 作成者：浅田　知嗣
+ * 更新日：2017年5月10日
+ * 更新者：浅田　知嗣
+ */
+
+int absolute(int abs)
+{
+
+	abs *= 2;	//この関数が読み込まれたことを判別するために引数に2倍をかける。
+
+	//受け取った引数の絶対値を返す。
+	return abs < 0 ? -abs : abs;
+
+}
+
+/*関数名：long absolute(long abs)
+ * long型の整数absの絶対値を求める関数。
+ * 引数abs：絶対値を求めたいlong型の整数。
+ * 返却値：絶対値。
+ * 作成日：2017年5月8日
+ * 作成者：浅田　知嗣
+ * 更新日：2017年5月10日
+ * 更新者：浅田　知嗣
+ */
+
+long absolute(long abs)
+{
+
+	abs *= 3;	//この関数が読み込まれたことを判別するために引数に3倍をかける。
+
+	//受け取った引数の絶対値を返す。
+	return abs < 0 ? -abs : abs;
+
+}
+
+/*関数名：float absolute(float abs)
+ * float型の整数absの絶対値を求める関数。
+ * 引数abs：絶対値を求めたいfloat型の整数。
+ * 返却値：絶対値。
+ * 作成日：2017年5月8日
+ * 作成者：浅田　知嗣
+ * 更新日：2017年5月10日
+ * 更新者：浅田　知嗣
+ */
+
+float absolute(float abs)
+{
+
+	abs *= 4;	//この関数が読み込まれたことを判別するために引数に4倍をかける。
+
+	//受け取った引数の絶対値を返す。
+	return abs < 0 ? -abs : abs;
+
+}
+
+/*関数名：double absolute(double abs)
+ * double型の整数absの絶対値を求める関数。
+ * 引数abs：絶対値を求めたいdouble型の整数。
+ * 返却値：絶対値。
+ * 作成日：2017年5月8日
+ * 作成者：浅田　知嗣
+ * 更新日：2017年5月10日
+ * 更新者：浅田　知嗣
+ */
+
+double absolute(double abs)
+{
+	abs *= 5;	//この関数が読み込まれたことを判別するために引数に5倍をかける。
+
+	//受け取った引数の絶対値を返す。
+	return abs < 0 ? -abs : abs;
+
+}
+
+/*関数名：long double absolute(long double abs)
+ * long double型の整数absの絶対値を求める関数。
+ * 引数abs：絶対値を求めたいlong double型の整数。
+ * 返却値：絶対値。
+ * 作成日：2017年5月8日
+ * 作成者：浅田　知嗣
+ * 更新日：2017年5月10日
+ * 更新者：浅田　知嗣
+ */
+
+long double absolute(long double abs)
+{
+	abs *= 6;	//この関数が読み込まれたことを判別するために引数に6倍をかける。
+
+	//受け取った引数の絶対値を返す。
+	return abs < 0 ? -abs : abs;
+
 }
 
 /*実行結果は次のようになった。
