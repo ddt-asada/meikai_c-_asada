@@ -2,37 +2,19 @@
  * 渡された引数の2乗を求めるインライン関数、3乗を求めるインライン関数を作成。
  * 作成日：2017年5月8日
  * 作成者：浅田　知嗣
+ * 更新日：2017年5月10日
+ * 更新者：浅田　知嗣
  */
 
 #include <iostream>
 
 using namespace std;
 
-/*関数名inline double square(double power)
- * 受け取った引数を2乗して返すインライン関数。
- * 引数power：2乗したい値。
- * 返却値：引数の2乗。
- * 作成日：2017年5月8日
- * 作成者：浅田　知嗣
- */
+//関数宣言。
+inline double square(double power);
 
-inline double square(double power)
-{
-	return power * power;	//引数の2乗を返す。
-}
-
-/*関数名inline double cube(double power)
- * 受け取った引数を3乗して返すインライン関数。
- * 引数power：3乗したい値。
- * 返却値：引数の3乗。
- * 作成日：2017年5月8日
- * 作成者：浅田　知嗣
- */
-
-inline double cube(double power)
-{
-	return power * power * power;	//引数の2乗を返す。
-}
+//関数宣言。
+inline double cube(double power);
 
 int main()
 {
@@ -51,4 +33,34 @@ int main()
 
 	//0を返す。
 	return 0;
+}
+
+/*関数名inline double square(double power)
+ * 受け取った引数を2乗して返すインライン関数。
+ * 引数power：2乗したい値。
+ * 返却値：引数の2乗。
+ * 作成日：2017年5月8日
+ * 作成者：浅田　知嗣
+ * 更新日：2017年5月10日
+ * 更新者：浅田　知嗣
+ */
+
+inline double square(double power)
+{
+	return power * power;	//引数の2乗を返す。
+}
+
+/*関数名inline double cube(double power)
+ * 受け取った引数を3乗して返すインライン関数。
+ * 引数power：3乗したい値。
+ * 返却値：引数の3乗。
+ * 作成日：2017年5月8日
+ * 作成者：浅田　知嗣
+ * 更新日：2017年5月10日
+ * 更新者：浅田　知嗣
+ */
+
+inline double cube(double power)
+{
+	return power * power * power;	//引数の2乗を返す。
 }
