@@ -43,9 +43,9 @@ int main()
 
 	//staticcast演算子を用いて型の変換を行う。
 	//合計をdouble型に変換して表示。
-	cout	<<"合計は"	<<static_cast<double> (Cal1 + Cal2 + Cal3)		<<"です。\n";
+	cout	<<"合計は"	<<static_cast<double>(Cal1 + Cal2 + Cal3)		<<"です。\n";
 	//平均をdouble型に変換して表示。
-	cout	<<"平均は"	<<static_cast<double> (Cal1 + Cal2 + Cal3) / 3	<<"です。\n";
+	cout	<<"平均は"	<<static_cast<double>(Cal1 + Cal2 + Cal3) / 3	<<"です。\n";
 
 	//0を返す。
 	return 0;
