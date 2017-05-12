@@ -2,30 +2,16 @@
  * 要素数noの配列arrayの全要素にsubを代入する関数を作成。
  * 作成日：2017年5月8日
  * 作成者：浅田　知嗣
+ * 更新日：2017年5月10日
+ * 更新者；浅田　知嗣
  */
 
 #include <iostream>
 
 using namespace std;
 
-/*関数名：void fill(int* array, int no, int sub)
- * 要素数noの配列arrayの全要素にsubを代入する関数。
- * 引数array：要素数noの配列。
- * 引数no：配列の要素数。
- * 引数sub：代入する値。
- * 作成日：2017年5月8日
- * 作成者：浅田　知嗣
- */
-
-void fill(int* array, int no, int sub)
-{
-	//全要素にsubを代入。
-	for(int i = 0; i < no; i++) {
-
-		*array++ = sub;	//ポインタが指している配列の要素にsubを代入しつつアドレスをインクリメント。
-
-	}
-}
+//関数の宣言。
+void fill(int* array, int no, int sub);
 
 int main()
 {
@@ -64,4 +50,25 @@ int main()
 
 	//0を返す。
 	return 0;
+}
+
+/*関数名：void fill(int* array, int no, int sub)
+ * 要素数noの配列arrayの全要素にsubを代入する関数。
+ * 引数array：要素数noの配列。
+ * 引数no：配列の要素数。
+ * 引数sub：代入する値。
+ * 作成日：2017年5月8日
+ * 作成者：浅田　知嗣
+ * 更新日：2017年5月10日
+ * 更新者；浅田　知嗣
+ */
+
+void fill(int* array, int no, int sub)
+{
+	//全要素にsubを代入。
+	for(int i = 0; i < no; i++) {
+
+		*array++ = sub;	//ポインタが指している配列の要素にsubを代入しつつアドレスをインクリメント。
+
+	}
 }
