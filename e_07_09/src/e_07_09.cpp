@@ -2,6 +2,8 @@
  * 要素数noの配列arrayの要素array[ins]に任意の整数INSを代入する関数を作成。
  * 作成日：2017年5月8日
  * 作成者：浅田　知嗣
+ * 更新日：2017年5月10日
+ * 更新者：浅田　知嗣
  */
 
 #include <iostream>
@@ -12,29 +14,8 @@ using namespace std;
 
 using namespace std;
 
-/*関数名：void aryins(int array[], int no, int ins, int INS)
- * 受け取った配列array[no]の要素array[ins]に、INSを挿入する関数。
- * 引数array[]：任意の配列。
- * 引数no：配列の要素数。
- * 引数rmv：挿入先の配列の要素。
- * 引数INS：挿入する整数。
- * 返却値：なし。
- * 作成日：2017年5月8日
- * 作成者：浅田　知嗣
- */
-
-void aryins(int array[], int no, int ins, int INS)
-{
-	//配列の要素を後ろにずらす。
-	for(int i = no - 1; i > ins; i--) {
-
-		array[i] = array[i - 1];	//配列の要素をその一つ前の要素で上書き。。
-
-	}
-
-	array[ins] = INS;	//配列の挿入したい場所に変数を挿入。
-
-}
+//関数宣言。
+void aryins(int array[], int no, int ins, int INS);
 
 int main()
 {
@@ -82,4 +63,30 @@ int main()
 
 	//0を返す。
 	return 0;
+}
+
+/*関数名：void aryins(int array[], int no, int ins, int INS)
+ * 受け取った配列array[no]の要素array[ins]に、INSを挿入する関数。
+ * 引数array[]：任意の配列。
+ * 引数no：配列の要素数。
+ * 引数rmv：挿入先の配列の要素。
+ * 引数INS：挿入する整数。
+ * 返却値：なし。
+ * 作成日：2017年5月8日
+ * 作成者：浅田　知嗣
+ * 更新日：2017年5月10日
+ * 更新者：浅田　知嗣
+ */
+
+void aryins(int array[], int no, int ins, int INS)
+{
+	//配列の要素を後ろにずらす。
+	for(int i = no - 1; i > ins; i--) {
+
+		array[i] = array[i - 1];	//配列の要素をその一つ前の要素で上書き。。
+
+	}
+
+	array[ins] = INS;	//配列の挿入したい場所に変数を挿入。
+
 }
