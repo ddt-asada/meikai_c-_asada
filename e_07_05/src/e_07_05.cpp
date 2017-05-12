@@ -2,48 +2,19 @@
  * 配列の要素を反転させる関数を2要素の交換を行う関数の呼び出しによって行うように変更したプログラム。
  * 作成日：2017年5月8日
  * 作成者：浅田　知嗣
+ * 更新日：2017年5月10日
+ * 更新者：浅田　知嗣
  */
 
 #include <iostream>
 
 using namespace std;
 
-/*関数名：void swap(int* swap1, int* swap2)
- * 渡された引数を入れ替える関数。
- * 引数swap1：入れ替える値。
- * 引数swap2：入れ替える値。
- * 返却値：なし。
- * 作成日：2017年5月8日
- * 作成者：浅田　知嗣
- */
+//関数の宣言。
+void swap(int* swap1, int* swap2);
 
-void swap(int* swap1, int* swap2)
-{
-	int	swap3  = *swap1;	//値を入れ替えるための仮の置き場に、swap1を代入。
-		*swap1 = *swap2;	//値を入れ替える。
-		*swap2 = swap3;	//値を入れ替える。
-
-}
-
-/*関数名：void reverse(int a[], int n)
- * 要素数nの配列aの並びを反転させる関数。
- * 引数a[]：配列のポインタ。
- * 引数n  ：配列の要素数。
- * 返却値：なし。
- * 作成日：2017年5月8日
- * 作成者：浅田　知嗣
- */
-
-void reverse(int array[], int no)
-{
-	//配列の要素を反転させる。
-	for(int i = 0; i < no / 2; i++) {
-
-		//渡した値を入れ替える関数を呼び出す。
-		swap(&array[i], &array[no - i - 1]);
-
-	}
-}
+//関数の宣言。
+void reverse(int array[], int no);
 
 int main()
 {
@@ -77,4 +48,45 @@ int main()
 
 	//0を返す。
 	return 0;
+}
+
+/*関数名：void swap(int* swap1, int* swap2)
+ * 渡された引数を入れ替える関数。
+ * 引数swap1：入れ替える値。
+ * 引数swap2：入れ替える値。
+ * 返却値：なし。
+ * 作成日：2017年5月8日
+ * 作成者：浅田　知嗣
+ * 更新日：2017年5月10日
+ * 更新者：浅田　知嗣
+ */
+
+void swap(int* swap1, int* swap2)
+{
+	int	swap3  = *swap1;	//値を入れ替えるための仮の置き場に、swap1を代入。
+		*swap1 = *swap2;	//値を入れ替える。
+		*swap2 = swap3;	//値を入れ替える。
+
+}
+
+/*関数名：void reverse(int a[], int n)
+ * 要素数nの配列aの並びを反転させる関数。
+ * 引数a[]：配列のポインタ。
+ * 引数n  ：配列の要素数。
+ * 返却値：なし。
+ * 作成日：2017年5月8日
+ * 作成者：浅田　知嗣
+ * 更新日：2017年5月10日
+ * 更新者：浅田　知嗣
+ */
+
+void reverse(int array[], int no)
+{
+	//配列の要素を反転させる。
+	for(int i = 0; i < no / 2; i++) {
+
+		//渡した値を入れ替える関数を呼び出す。
+		swap(&array[i], &array[no - i - 1]);
+
+	}
 }
