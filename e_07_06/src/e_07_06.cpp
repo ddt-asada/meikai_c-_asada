@@ -2,35 +2,16 @@
  * 要素数noの配列arrayの全要素の合計を求めて返却する関数sum_ofを作成。
  * 作成日：2017年5月8日
  * 作成者：浅田　知嗣
+ * 更新日：2017年5月10日
+ * 更新者：浅田　知嗣
  */
 
 #include <iostream>
 
 using namespace std;
 
-/*関数名：int sum_of(const int array[], int no)
- * 要素数noの配列の全要素の合計を求めて表示する関数。
- * 引数array[]：配列。
- * 引数no：配列の要素数。
- * 返却値：全要素数の合計。
- * 作成日2017年5月8日
- * 作成者：浅田　知嗣
- */
-
-int sum_of(const int array[], int no)
-{
-	int	SUM = 0;	//求めた合計を代入するための変数。
-
-	//全要素の合計を求める。
-	for(int i= 0; i < no; i++) {
-
-		SUM += array[i];	//合計を求める。
-
-	}
-
-	//求めた合計を返す。
-	return SUM;
-}
+//関数宣言。
+int sum_of(const int array[], int no);
 
 int main()
 {
@@ -53,4 +34,30 @@ int main()
 
 	//0を返す。
 	return 0;
+}
+
+/*関数名：int sum_of(const int array[], int no)
+ * 要素数noの配列の全要素の合計を求めて表示する関数。
+ * 引数array[]：配列。
+ * 引数no：配列の要素数。
+ * 返却値：全要素数の合計。
+ * 作成日2017年5月8日
+ * 作成者：浅田　知嗣
+ * 更新日：2017年5月10日
+ * 更新者：浅田　知嗣
+ */
+
+int sum_of(const int array[], int no)
+{
+	int	SUM = 0;	//求めた合計を代入するための変数。
+
+	//全要素の合計を求める。
+	for(int i= 0; i < no; i++) {
+
+		SUM += array[i];	//合計を求める。
+
+	}
+
+	//求めた合計を返す。
+	return SUM;
 }
