@@ -2,6 +2,8 @@
  * 各配列の文字列の個数を計算によって求めるプログラム。
  * 作成日：2017年5月9日
  * 作成者：浅田　知嗣
+ * 更新日：2017年5月12日
+ * 更新者：浅田　知嗣
  */
 
 #include <iostream>
@@ -10,18 +12,22 @@ using namespace std;
 
 int main()
 {
-	char	test2[][5] = {"LISP", "C", "Ada"};	//配列による文字列の配列。適当な文字列で初期化。この文字列の要素数を計算で求める。
+	char		test2[][5] = {"LISP", "C", "Ada"};			//配列による文字列の配列。適当な文字列で初期化。この文字列の要素数を計算で求める。
 
-	char*	test1[] ={"PAUL", "X", "MAC"};		//ポインタによる文字列の配列を宣言し、適当な文字列で初期化。この文字列の要素数を計算で求める。
+	const char*	test1[] ={"PAUL", "X", "MAC"};				//ポインタによる文字列の配列を宣言し、適当な文字列で初期化。この文字列の要素数を計算で求める。
+
+	int			ele2 = sizeof(test2) / sizeof(test2[0]);	//要素数の数だけ文字を表示するための繰り返しに使う変数。
+
+	int			ele1 = sizeof(test1) / sizeof(test1[0]);	//要素数の数だけ文字を表示するための繰り返しに使う変数。
 
 	//要素数を求めつつ文字列を表示。
-	for(int i = 0; i < sizeof(test2) / sizeof(test2[0]); i++) {
+	for(int i = 0; i < ele2; i++) {
 		//文字列を表示。
 		cout	<<"test2["	<<i	<<"]= \""	<<test2[i]	<<"\"\n";
 	}
 
 	//要素数を求めつつ文字列を表示。
-	for(int i = 0; i < sizeof(test1) / sizeof(test1[0]); i++) {
+	for(int i = 0; i < ele1; i++) {
 		//文字列を表示。
 		cout	<<"test1["	<<i	<<"]= \""	<<test1[i]	<<"\"\n";
 	}
