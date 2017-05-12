@@ -2,31 +2,16 @@
  * 要素数がnoである配列array1の全要素を配列array2にコピーする関数を作成。
  * 作成日：2017年5月9日
  * 作成者：浅田　知嗣
+ * 更新日：2017年5月10日
+ * 更新者：浅田　知嗣
  */
 
 #include <iostream>
 
 using namespace std;
 
-/*関数名：void ary_cpy(int* array1, const int* array2, int no)
- *
- * 引数*array1：コピー元の配列。
- * 引数*array2：コピー先の配列。
- * 引数no：配列の要素数。
- * 返却値：なし。
- * 作成日：2017年5月9日
- * 作成者：浅田　知嗣
- */
-
-void ary_cpy(int* array1, const int* array2, int no)
-{
-	//配列のコピー
-	for(int i = 0; i < no; i++) {
-
-		array1[i] = array2[i];	//コピー元からコピー先へ。
-
-	}
-}
+//関数の宣言。
+void ary_cpy(int* array1, const int* array2, int no);
 
 int main()
 {
@@ -65,4 +50,26 @@ int main()
 	//0を返す。
 	return 0;
 
+}
+
+/*関数名：void ary_cpy(int* array1, const int* array2, int no)
+ *
+ * 引数*array1：コピー元の配列。
+ * 引数*array2：コピー先の配列。
+ * 引数no：配列の要素数。
+ * 返却値：なし。
+ * 作成日：2017年5月9日
+ * 作成者：浅田　知嗣
+ * 更新日：2017年5月10日
+ * 更新者：浅田　知嗣
+ */
+
+void ary_cpy(int* array1, const int* array2, int no)
+{
+	//配列のコピー
+	for(int i = 0; i < no; i++) {
+
+		array1[i] = array2[i];	//コピー元からコピー先へ。
+
+	}
 }
