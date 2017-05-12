@@ -4,6 +4,8 @@
  * 作成者：浅田　知嗣
  * 更新日：2017年5月11日
  * 更新者：浅田　知嗣
+ * 更新日：2017年5月12日
+ * 更新者：浅田　知嗣
  */
 
 #include <iostream>
@@ -17,9 +19,9 @@ char* mystrcat(char* cat1, const char* cat2);
 
 int main()
 {
-	const char*	cat2 = "abcdefg";	//末尾に連結する文字列。
+	const char	cat2[] = "ABC";	//末尾に連結する文字列。
 
-	char*		cat1 = "12345";		//先頭に連結する文字列。
+	char		cat1[] = "123";	//先頭に連結する文字列。
 
 	//文字列を連結して表示。
 	cout	<<"文字列を連結しました。連結後の文字列は\n"<<mystrcat(cat1, cat2)	<<"です。";
@@ -35,6 +37,8 @@ int main()
  * 返却値：連結後の文字列cat1。
  * 作成日：2017年5月10日
  * 作成者：浅田　知嗣
+ * 更新日：2017年5月12日
+ * 更新者：浅田　知嗣
  */
 
 char* mystrcat(char* cat1, const char* cat2)
