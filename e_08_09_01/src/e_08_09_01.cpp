@@ -17,12 +17,15 @@ void mystrcpy(char* paste, const char* copy);
 
 int main()
 {
-	const char*	copy = "abcdef";	//コピー元のポインタによる文字列を生成。
+	const char 	copy[] = "abcdef";	//コピー元のポインタによる文字列を生成。
 
-	char*		paste = "ghijklmno";	//コピー先のポインタによる文字列を生成。
+	char		paste[] = "ghijklmno";	//コピー先のポインタによる文字列を生成。
 
 	//文字列をコピーする関数を呼び出す。
 	mystrcpy(paste, copy);
+
+	//コピーした文字列の表示。
+	cout	<<paste	<<'\n';
 
 	//0を返す。
 	return 0;
@@ -39,8 +42,7 @@ int main()
 
 void mystrcpy(char* paste, const char* copy)
 {
-	paste = (char*)copy;
 
-	//コピーした文字列の表示。
-	cout	<<paste	<<'\n';
+	paste = (char*)copy;	//文字列のコピー（ポインタによる対する代入により）。
+
 }
