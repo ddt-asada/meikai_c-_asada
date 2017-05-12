@@ -2,32 +2,16 @@
  * 要素数noの配列arrayから任意の要素array[rmv]を削除する関数を作成。
  * 作成日：2017年5月8日
  * 作成者：浅田　知嗣
+ * 更新日：2017年5月10日
+ * 更新者：浅田　知嗣
  */
 
 #include <iostream>
 
 using namespace std;
 
-/*関数名：void aryrmv(int array[], int no, int rmv)
- * 受け取った配列array[no]のうちarray[rmv]を削除し、前方に数字を詰める関数。
- * 引数array[]：削除を行うための配列。
- * 引数no：配列の要素数。
- * 引数rmv：削除したい配列の要素。
- * 返却値：なし。
- * 作成日：2017年5月8日
- * 作成者：浅田　知嗣
- */
-
-void aryrmv(int array[], int no, int rmv)
-{
-	//任意の要素を削除して前に詰める。
-	//末尾要素の値は変更しないので繰り返しの終わりは要素数-1としている。
-	for(int i = rmv; i < no - 1; i++) {
-
-		array[i] = array[i + 1];	//任意の要素をその一つ後ろの要素で上書き（数字を前に詰める）。
-
-	}
-}
+//関数宣言。
+void aryrmv(int array[], int no, int rmv);
 
 int main()
 {
@@ -53,7 +37,7 @@ int main()
 	cin		>>rmv;
 
 	//任意の要素を削除する関数を呼び出す。
-	aryrmv(array, no, rmv-1);
+	aryrmv(array, no, rmv);
 
 	//削除された後の配列を表示。
 	cout	<<rmv	<<"番目の要素を削除しました。\n";
@@ -68,4 +52,27 @@ int main()
 
 	//0を返す。
 	return 0;
+}
+
+/*関数名：void aryrmv(int array[], int no, int rmv)
+ * 受け取った配列array[no]のうちarray[rmv]を削除し、前方に数字を詰める関数。
+ * 引数array[]：削除を行うための配列。
+ * 引数no：配列の要素数。
+ * 引数rmv：削除したい配列の要素。
+ * 返却値：なし。
+ * 作成日：2017年5月8日
+ * 作成者：浅田　知嗣
+ * 更新日：2017年5月10日
+ * 更新者：浅田　知嗣
+ */
+
+void aryrmv(int array[], int no, int rmv)
+{
+	//任意の要素を削除して前に詰める。
+	//末尾要素の値は変更しないので繰り返しの終わりは要素数-1としている。
+	for(int i = rmv; i < no - 1; i++) {
+
+		array[i] = array[i + 1];	//任意の要素をその一つ後ろの要素で上書き（数字を前に詰める）。
+
+	}
 }
