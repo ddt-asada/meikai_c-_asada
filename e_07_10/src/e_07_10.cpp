@@ -2,6 +2,8 @@
  * no行5列のint型2次元配列matrixの各行の最大値を要素数noの1次元配列arrayに格納する関数を作成。
  * 作成日：2017年5月8日
  * 作成者：浅田　知嗣
+ * 更新日：2017年5月10日
+ * 更新者：浅田　知嗣
  */
 
 #include <iostream>
@@ -10,28 +12,8 @@
 
 using namespace std;
 
-/*関数名：void maxline(int matrix[][5], int array[], int no)
- * no行5列のint型2次元配列matrixの各行の最大値を要素数noの1次元配列arrayに格納する関数
- * 引数matrix[][5]：最大値を取得するno行5列の行列。
- * 引数array[]：最大値を格納する配列。
- * 引数no：配列の要素数。
- * 作成日：2017年5月8日
- * 作成者：浅田　知嗣
- */
-
-void maxline(int matrix[][5], int array[], int no)
-{
-	//各行の最大値を求める。
-	//行の処理。
-	for(int i = 0; i < no; i++) {
-		//列の処理。
-		for(int j = 0; j < 5; j++) {
-
-			array[i] < matrix[i][j] ? array[i] = matrix[i][j] : array[i];
-
-		}
-	}
-}
+//関数の宣言。
+void maxline(int matrix[][5], int array[], int no);
 
 int main()
 {
@@ -88,4 +70,29 @@ int main()
 
 	//0を返す。
 	return 0;
+}
+
+/*関数名：void maxline(int matrix[][5], int array[], int no)
+ * no行5列のint型2次元配列matrixの各行の最大値を要素数noの1次元配列arrayに格納する関数
+ * 引数matrix[][5]：最大値を取得するno行5列の行列。
+ * 引数array[]：最大値を格納する配列。
+ * 引数no：配列の要素数。
+ * 作成日：2017年5月8日
+ * 作成者：浅田　知嗣
+ * 更新日：2017年5月10日
+ * 更新者：浅田　知嗣
+ */
+
+void maxline(int matrix[][5], int array[], int no)
+{
+	//各行の最大値を求める。
+	//行の処理。
+	for(int i = 0; i < no; i++) {
+		//列の処理。
+		for(int j = 0; j < 5; j++) {
+
+			array[i] < matrix[i][j] ? array[i] = matrix[i][j] : array[i];
+
+		}
+	}
 }
