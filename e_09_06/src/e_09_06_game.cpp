@@ -17,8 +17,8 @@
 
 using namespace std;
 
-//静的記憶域期間をもつ整数値の宣言。
-static int Answer = 0;
+//外部結合をもつ整数値の宣言。
+int Answer = 0;
 
 /*関数名：void initialize()
  * 乱数の種を設定するための関数。

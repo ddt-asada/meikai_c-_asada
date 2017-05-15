@@ -16,13 +16,14 @@ using namespace std;
 
 int	max_no = 999;	//当てるべき数の最大値。
 
-extern int Answer;	//べつのソースファイルで定義された数を使うことを宣言。
 
 int main()
 {
-	int	hantei;			//答えの判定を行うための型。
+	int			hantei;			//答えの判定を行うための型。
 
-	int	inp = 0;		//入力回数をカウントするための型。
+	int			inp = 0;		//入力回数をカウントするための型。
+
+	extern int Answer;	//べつのソースファイルで定義された数を使うことを宣言。
 
 	//乱数の種を設定する関数を呼び出す。
 	initialize();
@@ -56,7 +57,7 @@ int main()
 			}
 
 		//正解だった場合はループを抜けて正解と表示。
-		} while (hantei != 0 && inp != 11);
+		} while (hantei != 0 && inp != 10);
 
 			//問題に正解した時。
 			if(hantei == 0) {
