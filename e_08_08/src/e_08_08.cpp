@@ -38,8 +38,10 @@ int main()
 
 void put_rev(const char* rev)
 {
+	int	len = strlen(rev);		//文字列の長さを取得。
+
 	//文字列を逆順に表示するための繰り返し。
-	for(int i = strlen(rev) - 1; i >= 0; i--) {
+	for(int i = len - 1; i >= 0; i--) {
 		//文字列を逆順に表示。
 		cout	<<rev[i];
 	}
