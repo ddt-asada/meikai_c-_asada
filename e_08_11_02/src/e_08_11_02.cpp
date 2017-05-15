@@ -4,6 +4,8 @@
  * 作成者：浅田　知嗣
  * 更新日：2017年5月12日
  * 更新者：浅田　知嗣
+ * 更新日：2017年5月15日
+ * 更新者：浅田　知嗣
  */
 
 #include <iostream>
@@ -18,7 +20,7 @@ int mystrncmp(const char* cmp1, const char* cmp2, int range);
 int main()
 {
 	//cmp1の方が大きく、rangeが一番短くなるパターンを確認。
-	//正しく動作していれば「5」が返ってくる。
+	//正しく動作していれば「-1」が返ってくる。
 	const char	cmp1[] = "OPQRSTUVWXYZ";	//比較したい文字列。(12文字）
 
 	const char	cmp2[] = "ABCDEFG";		//比較したい文字列。（7文字）
@@ -29,7 +31,7 @@ int main()
 	cout	<<"文字列の比較を行いました。結果は"	<<mystrncmp(cmp1, cmp2, range1)	<<"です。\n";
 
 	//cmp2の方が大きく、cmp1が一番短くなるパターンを確認。
-	//正しく動作していれば「-2」が返ってくる。
+	//正しく動作していれば「1」が返ってくる。
 	const char	cmp3[] = "AB";			//比較したい文字列。(2文字）
 
 	const char	cmp4[] = "CDEFG";		//比較したい文字列。（5文字）
@@ -64,58 +66,56 @@ int main()
  * 作成者：浅田　知嗣
  * 更新日：2017年5月12日
  * 更新者：浅田　知嗣
+ * 更新日：2017年5月15日
+ * 更新者：浅田　知嗣
  */
 
 int mystrncmp(const char* cmp1, const char* cmp2, int range)
 {
-	int	num;					//繰り返しを行う数を入力する型。今回はcmp1とcmp2とrangeのうちもっとも短いものを繰り返し回数の上限とする。
+	int	num = range;			//繰り返しを行う数を入力する型。今回はcmp1とcmp2とrangeのうちもっとも短いものを繰り返し回数の上限とする。
 
 	int	cmp1Len = strlen(cmp1);	//cmp1の文字列の長さ。
 
 	int	cmp2Len = strlen(cmp2);	//cmp2の文字列の長さ。
 
-	int max = 0;				//大小の判定を入力する型。
+	int judge = 0;				//大小の判定を入力する型。
 
 	//繰り返しを行う回数を求める。どちらか短い方の文字列の文字数を上限とする。
 	//まずrangeとほかの文字列を比較、rangeが短ければそのままrangeを採用。文字列の方が短ければ次の判定へ進む。
-	if(range >= cmp1Len && range >= cmp2Len) {
+	if(num > cmp1Len) {
 
-		//文字列の長さの比較を行う。
-		if(cmp1Len <= cmp2Len) {
+		num = cmp1Len;		//cmp1の文字列の長さを繰り返しの上限として採用。
 
-			num = cmp1Len;		//cmp1の文字列の長さを繰り返しの上限として採用。
+	}
 
-			//cmp2のほうが短いとき
-		} else {
+	//cmp2のほうが短いとき
+	if (num > cmp2Len) {
 
-			num = cmp2Len;		//cmp2の文字列の長さを繰り返しの上限として採用。
-
-		}
-
-	//rangeが短い場合
-	} else {
-
-		num = range;					//rangeを繰り返しの上限として採用。
+		num = cmp2Len;		//cmp2の文字列の長さを繰り返しの上限として採用。
 
 	}
 
 	//どちらかの文字列がナル文字にたどり着くまで文字列1つ1つの大きさを比較していく。
+	//途中で異なる文字が出現した場合は判定を入力しループを抜ける。
 	for(int i = 0; i < num; i++) {
 
 		//大小を比較。
 		if(cmp1[i] > cmp2[i]) {
 
-			max++;	//maxをカウントする。
+			judge = 1;	//判定を入力。
+
+			i = num;	//ループを抜ける。
 
 		//大小を比較。
 		} else if (cmp1[i] < cmp2[i]) {
 
-			max--;	//maxをひとつへらす。
+			judge = -1;	//判定を入力。
 
+			i = num;	//ループを抜ける。
 		}
 	}
 
 	//最後に比較した結果を返す。
 	//cmp1が大きければmaxは正の値そうでなければ負の値、等しければ0になっているはず。
-	return max;
+	return judge;
 }
