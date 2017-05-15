@@ -2,6 +2,8 @@
  * 名前空間Osakaを追加したプログラムを作成。
  * 作成日：2017年5月14日
  * 作成者：浅田　知嗣
+ * 更新日：2017年5月16日
+ * 更新者：浅田　知嗣
  */
 
 #include <iostream>
@@ -53,29 +55,29 @@ namespace Japanese
 		cout	<<"こんにちは。\n";
 
 	}
-}
 
 
-//名前空間Osakaを定義。
-namespace Osaka
-{
-	//3で初期化。
-	int x = 3;
-
-	void print_x()
+	//名前空間Osakaを定義。
+	namespace Osaka
 	{
+		//3で初期化。
+		int x = 3;
 
-		//大阪弁で表示。
-		cout	<<"変数xの値は"	<<x	<<"でっせ。\n";
+		void print_x()
+		{
 
-	}
+			//大阪弁で表示。
+			cout	<<"変数xの値は"	<<x	<<"でっせ。\n";
 
-	void hello()
-	{
+		}
 
-		//もうかってまっか。と表示。
-		cout	<<"もうかってまっか。\n";
+		void hello()
+		{
 
+			//もうかってまっか。と表示。
+			cout	<<"もうかってまっか。\n";
+
+		}
 	}
 }
 
@@ -96,11 +98,11 @@ int main()
 	Japanese::hello();
 
 	//名前空間Osakaを呼び出す。
-	cout	<<"Osaka::x = "		<<Osaka::x		<<'\n';
+	cout	<<"Japanese::Osaka::x = "		<<Japanese::Osaka::x		<<'\n';
 	//Osakaの関数を呼び出す。
-	Osaka::print_x();
+	Japanese::Osaka::print_x();
 	//Osakaの関数を呼び出す。
-	Osaka::hello();
+	Japanese::Osaka::hello();
 
 	//0を返す。
 	return 0;
