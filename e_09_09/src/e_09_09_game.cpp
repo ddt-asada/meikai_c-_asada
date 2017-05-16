@@ -17,9 +17,11 @@
 
 using namespace std;
 
+namespace {
 //静的記憶域期間をもつ整数値の宣言。
 int Answer = 0;
 
+}
 /*関数名：void initialize()
  * 乱数の種を設定するための関数。
  * 引数：なし。
@@ -37,7 +39,7 @@ void initialize()
 }
 
 
-/*関数名：void gen_no()
+/*関数名：int gen_no()
  * 当てるべき数（問題）の生成を行う関数。答え（Answer）は静的記憶域期間を持つ変数かつこのソースファイル内でしか利用しないので返却値はなしてとしている。
  * 引数：なし。
  * 返却値：なし。
@@ -45,12 +47,13 @@ void initialize()
  * 作成者：浅田　知嗣
  */
 
-void gen_no()
+int gen_no()
 {
 
 	//0～max_noまでの数を生成。max_noはメイン部で宣言されているかつ、ヘッダ部でソースファイル船体で使えるように宣言されている。
 	Answer = rand() % (max_no + 1);
 
+	return Answer;
 }
 
 /*関数名：int judge(int cand)

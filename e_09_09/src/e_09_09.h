@@ -12,7 +12,7 @@
 void initialize();
 
 //あてるべき数を0～上限値までの間の乱数で生成する関数の宣言。
-void gen_no();
+int gen_no();
 
 //入力された値が正解かどうかを判定するための関数の宣言。
 int judge(int cand);

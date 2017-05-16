@@ -18,7 +18,7 @@ int	max_no = 999;	//当てるべき数の最大値。
 
 int main()
 {
-	extern int Answer;	//べつのソースファイルで定義された数を使うことを宣言。
+	int Answer;			//回答を入れる宣言。
 
 	int	hantei;			//答えの判定を行うための型。
 
@@ -33,7 +33,7 @@ int main()
 	//やめることを宣言するまで問題を繰り返す。繰り返しの判定は最後にbool confirm_retry()を呼び出して行う。
 	do {
 		//問題を生成する関数を呼び出す。
-		gen_no();
+		Answer = gen_no();
 
 		//正解するまで繰り返す。
 		do {
