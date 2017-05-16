@@ -3,6 +3,8 @@
  * なお、最も小さい文字列を求められるように明示的に特殊化したものも作成する。
  * 作成日：2017年5月13日
  * 作成者：浅田　知嗣
+ * 更新日：2017年5月16日
+ * 更新者：浅田　知嗣
  */
 
 #include <iostream>
@@ -63,13 +65,13 @@ template <> const char* min_of<const char*>(const char** cmin, const int n)
 
 int main()
 {
-	int	 n = 5;								//配列の要素数。
+	const int	 n = 5;								//配列の要素数。
 
 	int				min[n] = {1, 2, 5, 3, 8};			//最小値を比較したい配列を宣言。int型を宣言。
 
 	double			dmin[n] = {1.1, 1.2, 1.5, 0.5, 11.1};	//最小値を威嚇したい変数を宣言。double型を宣言。
 
-	const char*		cmin[3] = {"XYZ", "ABCD", "opq"};	//最小値を比較文字列を宣言。
+	const char*		cmin[3] = {"ABC", "HIJK", "opq"};	//最小値を比較文字列を宣言。
 
 	//上の二つをテンプレート関数に渡し、どのように値が帰ってくるか確認する。
 	//関数を呼び出して帰ってきた値を表示。
