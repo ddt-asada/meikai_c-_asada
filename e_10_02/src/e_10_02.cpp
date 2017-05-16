@@ -6,7 +6,7 @@
 
 #include <iostream>
 //自作ヘッダを読み込む。
-#include "e_10_02.h";
+#include "e_10_02.h"
 
 using namespace std;
 
@@ -15,6 +15,7 @@ int main()
 	string	name, number;			//名前・ナンバーの定義。
 	int		width, length, height;	//車幅・車長・車高・の定義。
 	double	gas;					//ガソリンの定義。
+	double	eco;					//燃費の定義。
 
 	//車のスペックの入力を促す。
 	cout	<<"車のデータを入力せよ。\n";
@@ -24,6 +25,7 @@ int main()
 	//名前の入力。
 	cin		>>name;
 
+	//車のナンバーに最初の
 	//ナンバーの入力を促す。
 	cout	<<"ナンバーは：";
 	//ナンバーの入力。
@@ -44,13 +46,18 @@ int main()
 	//車高の入力。
 	cin		>>height;
 
+	//燃費の入力を促す。
+	cout	<<"燃費は：";
+	//燃費の入力。
+	cin		>>eco;
+
 	//ガソリンの量の入力を促す。
 	cout	<<"ガソリン量は：";
 	//ガソリン量の入力。
 	cin		>>gas;
 
 	//コンストラクタに渡す。
-	Car myCar(name, number, width, length, height, gas);
+	Car myCar(name, number, width, length, height, gas, eco);
 
 	//スペックを表示。
 	myCar.print_spec();

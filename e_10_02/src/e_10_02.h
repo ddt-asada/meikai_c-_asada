@@ -15,16 +15,18 @@ class Car
 	int			width, length, height;	//車幅・車長・車高の定義。
 	double		xp, yp;					//現在位置座標。
 	double		fuel_level;				//残り燃料。
+	double		fuel_eco;				//燃費。
 
 public:
 	//コンストラクタの定義。
-	Car(std::string n, std::string no, int w, int l, int h, double f){
+	Car(std::string n, std::string no, int w, int l, int h, double fl, double fe){
 		name = n;			//名前の入力。
 		number = no;		//ナンバーの入力。
 		width = w;			//車幅の入力。
 		length = l;			//車長の入力。
 		height = h;			//車高の入力。
-		fuel_level = f;		//残り燃料。
+		fuel_level = fl;	//残り燃料。
+		fuel_eco = fe;		//燃費。
 		xp = yp =0.0;		//座標を0で初期化。
 	}
 
@@ -62,13 +64,15 @@ public:
 		std::cout	<<"車長："		<<length	<<'\n';
 		//車高を表示。
 		std::cout	<<"車高："		<<height	<<'\n';
+		//燃費を表示。
+		std::cout	<<"燃費："		<<fuel_eco	<<'\n';
 	}
 
 	//移動距離の分だけ燃料を減らす関数。
 	bool move(double dx, double dy)
 	{
-		//移動距離を計算する。
-		double dist = sqrt(dx * dx + dy * dy);
+		//燃費を考慮しつつ移動距離を計算する。
+		double dist = sqrt(dx * dx + dy * dy) / fuel_eco;
 
 		//燃料不足の時の分岐。
 		if(dist > fuel_level) {
