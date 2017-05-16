@@ -6,6 +6,8 @@
  * 更新者：浅田　知嗣
  * 更新日：2017年5月15日
  * 更新者：浅田　知嗣
+ * 更新日：2017年5月16日
+ * 更新者：浅田　知嗣
  */
 
 #include <iostream>
@@ -63,6 +65,8 @@ int main()
  * 更新者：浅田　知嗣
  * 更新日：2017年5月15日
  * 更新者：浅田　知嗣
+ * 更新日：2017年5月16日
+ * 更新者：浅田　知嗣
  */
 
 int mystrcmp(const char* cmp1, const char* cmp2)
@@ -74,7 +78,7 @@ int mystrcmp(const char* cmp1, const char* cmp2)
 	int judge = 0;					//大小の判定結果を代入するための型。
 
 	//繰り返しを行う回数を求める。どちらか短い方の文字列の文字数を上限とする。
-	if(num >= len) {
+	if(num <= len) {
 
 		num = len;		//cmp2の文字列の長さを繰り返しの上限として採用。
 	}
