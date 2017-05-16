@@ -5,6 +5,7 @@
  */
 
 #include <iostream>
+#include <string>
 //クラスの情報が入った自作ヘッダを読み込む。
 #include "e_10_01.h"
 
@@ -13,7 +14,7 @@ using namespace std;
 int main()
 {
 	string	name;					//名前の定義。
-	int		height, weight, old;	//身長・体重・年齢の定義。
+	double	height, weight, old;	//身長・体重・年齢の定義。
 
 	//名前の入力を促す。
 	cout	<<"あなたの名前は：";
@@ -39,7 +40,19 @@ int main()
 	Human Personal(name, height, weight, old);
 
 	//入力した情報を表示。
-	Personal.print_spec();
+	cout	<<"名前は"	<<Personal.my_name()	<<"ですね。\n";
+	//身長を表示。
+	cout	<<"身長は"	<<Personal.my_height()	<<"ですね。\n";
+	//体重を表示。
+	cout	<<"体重は"	<<Personal.my_weight()	<<"ですね。\n";
+	//年齢を表示。
+	cout	<<"年齢は"	<<Personal.my_old()		<<"ですね。\n";
+
+	//BMIを表示する。
+	Personal.bmi();
+
+	//理想の身長との差を表示。
+	Personal.theight();
 
 	//0を返す。
 	return 0;

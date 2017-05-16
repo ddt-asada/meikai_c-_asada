@@ -12,11 +12,11 @@ class Human {
 	//名前の定義。
 	std::string	name;
 	//身長・体重・年齢の定義。
-	int			height, weight, old;
+	double			height, weight, old;
 
 	//コンストラクタの宣言。
 	public:
-	Human(std::string n, int h, int w, int o) {
+	Human(std::string n, double h, double w, double o) {
 
 		name = n;		//名前。
 		height = h;		//身長。
@@ -25,21 +25,66 @@ class Human {
 
 	}
 
-	//入力したパラメータを表示する関数。
-	void print_spec()
+	//名前を返却する関数。
+	std::string my_name()
 	{
-		//名前の表示。
-		std::cout	<<"名前："	<<name		<<'\n';
+		//名前を返す。
+		return name;
+	}
 
-		//身長の表示。
-		std::cout	<<"身長："	<<height	<<'\n';
+	//身長返却する関数。
+	double my_height()
+	{
+		//身長を返す。
+		return height;
+	}
 
-		//体重の表示。
-		std::cout	<<"体重："	<<weight	<<'\n';
+	//体重を返却する関数。
+	double my_weight()
+	{
+		//体重を返す。
+		return weight;
+	}
 
-		//年齢の表示。
-		std::cout	<<"年齢："	<<old		<<'\n';
+	//年齢を返却する関数。
+	double my_old()
+	{
+		//年齢を返す。
+		return old;
+	}
 
+	//BMIを求め、それに平均に対する過不足を表示する関数。
+	void bmi()
+	{
+		double	bmi = 0;		//BMIを求めて代入する型。
+
+		bmi = weight / ((height / 100) * (height / 100));		//BMIを求め、代入。
+
+		//BMIを表示。
+		std::cout	<<"あなたのBMIは"	<<bmi	<<"です。\n";
+
+		//BMIが18.5以下の時。
+		if(bmi <= 18.5) {
+			//痩せすぎと表示。
+			std::cout	<<"これは痩せすぎです。\n";
+
+		//18.5～25.0の時。
+		} else if (bmi > 18.5 && bmi < 25) {
+			//健康的です。と表示。
+			std::cout	<<"健康的です。\n";
+
+		//これら以外の時。
+		} else {
+			//太りすぎです。と表示。
+			std::cout	<<"太りすぎです。\n";
+		}
+	}
+
+	//理想の身長までの差を表示する。
+	void theight()
+	{
+		//理想の身長との差を表示適当に180cmぐらい。
+		std::cout	<<"理想の身長との差は"	<<180 - height	<<"cmです。\n";
 	}
 
 };
