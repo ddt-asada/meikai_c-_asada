@@ -2,6 +2,8 @@
  * 演習9-7のプログラムを名前空間メンバの宣言と定義を分離したプログラムを作成。
  * 作成日：2017年5月14日
  * 作成者：浅田　知嗣
+ * 更新日：2017年5月16日
+ * 更新者：浅田　知嗣
  */
 
 #include <iostream>
@@ -30,19 +32,21 @@ namespace Japanese
 	void		print_x();
 	//関数の宣言。
 	void		hello();
+
+	//名前空間Osakaの宣言。
+	namespace Osaka
+	{
+		//変数の宣言。
+		extern int x;
+		//関数の宣言。
+		void		print_x();
+		//関数の宣言。
+		void		hello();
+	}
 }
 
 
-//名前空間Osakaの宣言。
-namespace Osaka
-{
-	//変数の宣言。
-	extern int x;
-	//関数の宣言。
-	void		print_x();
-	//関数の宣言。
-	void		hello();
-}
+
 
 
 //名前空間Engilishの定義。
@@ -85,17 +89,17 @@ void	Japanese::hello()
 
 //名前空間Osakaの定義。
 //3で初期化。
-int		Osaka::x = 3;
+int		Japanese::Osaka::x = 3;
 
 //関数の宣言。
-void	Osaka::print_x()
+void	Japanese::Osaka::print_x()
 	{
 		//大阪弁で表示。
 		cout	<<"変数xの値は"	<<x	<<"でっせ。\n";
 	}
 
 //関数の宣言。
-void	Osaka::hello()
+void	Japanese::Osaka::hello()
 	{
 		//もうかってまっか。と表示。
 		cout	<<"もうかってまっか。\n";
@@ -119,11 +123,11 @@ int main()
 	Japanese::hello();
 
 	//名前空間Osakaを呼び出す。
-	cout	<<"Osaka::x = "		<<Osaka::x		<<'\n';
+	cout	<<"Japanese::Osaka::x = "		<<Japanese::Osaka::x		<<'\n';
 	//Osakaの関数を呼び出す。
-	Osaka::print_x();
+	Japanese::Osaka::print_x();
 	//Osakaの関数を呼び出す。
-	Osaka::hello();
+	Japanese::Osaka::hello();
 
 	//0を返す。
 	return 0;
