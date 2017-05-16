@@ -6,6 +6,8 @@
  * 更新者：浅田　知嗣
  * 更新日：2017年5月15日
  * 更新者：浅田　知嗣
+ * 更新日：2017年5月16日
+ * 更新者：浅田　知嗣
  */
 
 #include <iostream>
@@ -39,6 +41,8 @@ int main()
  * 更新者：浅田　知嗣
  * 更新日：2017年5月15日
  * 更新者：浅田　知嗣
+ * 更新日：2017年5月16日
+ * 更新者：浅田　知嗣
  */
 
 void count_digits(const char* Digits, int Num[])
@@ -48,7 +52,7 @@ void count_digits(const char* Digits, int Num[])
 		for(int i = 0; Digits[i]; i++) {
 
 			//同じ文字があったとき。
-			switch(static_cast<int>(Digits[i])) {
+			switch(Digits[i]) {
 			//0があったとき。
 			case '0'	:Num[0]++;	break;
 			//1があったとき。
