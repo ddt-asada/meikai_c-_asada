@@ -6,6 +6,8 @@
  * 更新者：浅田　知嗣
  * 更新日：2017年5月12日
  * 更新者：浅田　知嗣
+ * 更新日：2017年5月15日
+ * 更新者：浅田　知嗣
  */
 #include <iostream>
 //文字列処理関数を提供するヘッダ。
@@ -62,6 +64,8 @@ int main()
  * 更新者：浅田　知嗣
  * 更新日：2017年5月12日
  * 更新者：浅田　知嗣
+ * 更新日：2017年5月15日
+ * 更新者：浅田　知嗣
  */
 
 void mystrncpy(char* paste, const char* copy,int range)
@@ -80,6 +84,8 @@ void mystrncpy(char* paste, const char* copy,int range)
 		} else if(copyLen < i) {
 
 			paste[i] = '\0';	//ナル文字で埋め尽くす。
+
+			i = range;			//ループを抜ける。
 
 		}
 	}
