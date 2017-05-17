@@ -19,7 +19,7 @@ Boolean int_eq(int x, int y)
 int main()
 {
 	int	n;
-	Boolean	a;			//値がないのでデフォルトコンストラクタに放り込まれ、Falseを持つ。。
+	Boolean	a;			//値がないのでデフォルトコンストラクタに放り込まれ、Falseを持つ。
 	Boolean	b = a;		//Falseをもつaのコピーコンストラクタ。
 	Boolean	c = 100;	//値を持つのでTrueを持つ。
 	Boolean	x[8];		//値がないのでデフォルトコンストラクタに放り込まれ、Falseを持つ
@@ -37,7 +37,7 @@ int main()
 	cout	<<"bの値："	<<static_cast<const char*>(b)	<<'\n';
 
 	for(int i = 0; i < 8; i++) {
-		(!x[i]);
-		cout	<<"x["	<<i	<<"] = "<<x[i]	<<'\n';
+
+		cout	<<"x["	<<i	<<"] = "<<!(x[i])	<<'\n';
 	}
 }
