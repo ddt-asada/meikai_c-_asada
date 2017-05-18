@@ -2,12 +2,17 @@
  * 名前・身長・体重などをメンバとして持つ人間クラスに誕生日を追加したものを作成。
  * 作成日：2017年5月16日
  * 作成者：浅田　知嗣
+ * 更新日：2017年5月17日
+ * 更新者：浅田　知嗣
+ * 更新日：2017年5月18日
+ * 更新者：浅田　知嗣
  */
 
 #include <iostream>
 #include <string>
 //クラスの情報が入った自作ヘッダを読み込む。
 #include "e_11_06.h"
+#include "e_11_06_Date.h"
 
 using namespace std;
 
@@ -53,7 +58,7 @@ int main()
 	cin		>>day;
 
 	//コンストラクタを通じてデータを読み込ませる。
-	Human Personal(name, height, weight, old, year, month, day);
+	Human Personal(name, height, weight, old, Date(year, month, day));
 
 	//入力した情報を表示。
 	cout	<<"名前は"		<<Personal.my_name()		<<"ですね。\n";
@@ -64,7 +69,7 @@ int main()
 	//年齢を表示。
 	cout	<<"年齢は"		<<Personal.my_old()			<<"ですね。\n";
 	//誕生日を表示。
-	cout	<<"誕生日は"	<<Personal.my_birth_year()	<<"年"	<<Personal.my_birth_month()	<<"月"	<<Personal.my_birth_day()	<<"日ですね。\n";
+	cout	<<"誕生日は"	<<Personal.my_birthday()	<<"ですね。\n";
 
 	//BMIを表示する。
 	Personal.bmi();
