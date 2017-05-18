@@ -2,26 +2,31 @@
  * 自動車クラスに購入年月日を追加したものを作成せよ。
  * 作成日：2017年5月16日
  * 作成者：浅田　知嗣
+ * 更新日：2017年5月17日
+ * 更新者：浅田　知嗣
+ * 更新日：2017年5月18日
+ * 更新者：浅田　知嗣
  */
 
 #include <cmath>
 #include <string>
 #include <iostream>
+#include "e_11_07_Date.h"
 
 //クラスの定義。
 class Car
 {
 	std::string	name, number;					//名前・ナンバーの定義。
 	int			width, length, height;			//車幅・車長・車高の定義。
-	int			buy_year, buy_month, buy_day;	//購入年月日の定義。
 	double		xp, yp;							//現在位置座標。
 	double		fuel_level;						//残り燃料。
 	double		fuel_eco;						//燃費。
+	Date		buy_day;						//購入年月日。
 
 public:
 	//コンストラクタの定義。
-	Car(std::string n, std::string no, int w, int l, int h, int y, int m, int d, double fl, double fe)
-	:name(n), number(no), width(w), length(l), height(h), buy_year(y), buy_month(m), buy_day(d), fuel_level(fl), fuel_eco(fe)
+	Car(std::string n, std::string no, int w, int l, int h, double fl, double fe, const Date& buy )
+	:name(n), number(no), width(w), length(l), height(h), fuel_level(fl), fuel_eco(fe), buy_day(buy)
 {
 		xp = yp =0.0;		//座標を0で初期化。
 }
@@ -61,7 +66,7 @@ public:
 		//車高を表示。
 		std::cout	<<"車高："		<<height	<<'\n';
 		//購入年月日を表示。
-		std::cout	<<"購入日："	<<buy_year	<<"年"	<<buy_month	<<"月"	<<buy_day	<<"日\n";
+		std::cout	<<"購入日："	<<buy_day	<<'\n';
 		//燃費を表示。
 		std::cout	<<"燃費："		<<fuel_eco	<<'\n';
 	}

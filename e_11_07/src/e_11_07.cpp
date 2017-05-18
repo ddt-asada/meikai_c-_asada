@@ -2,11 +2,16 @@
  * 自動車クラスに購入年月日を追加したものを作成せよ。
  * 作成日：2017年5月16日
  * 作成者：浅田　知嗣
+ * 更新日：2017年5月17日
+ * 更新者：浅田　知嗣
+ * 更新日：2017年5月18日
+ * 更新者：浅田　知嗣
  */
 
 #include <iostream>
 //自作ヘッダを読み込む。
 #include "e_11_07.h"
+#include "e_11_07_Date.h"
 
 using namespace std;
 
@@ -73,7 +78,7 @@ int main()
 	cin		>>gas;
 
 	//コンストラクタに渡す。
-	Car myCar(name, number, width, length, height, year, month, day, gas, eco);
+	Car myCar(name, number, width, length, height, gas, eco, Date(year, month, day));
 
 	//スペックを表示。
 	myCar.print_spec();
