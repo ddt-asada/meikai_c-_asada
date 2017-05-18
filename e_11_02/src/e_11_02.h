@@ -4,6 +4,8 @@
  * 作成者：浅田　知嗣
  * 更新日：2017年5月17日
  * 更新者：浅田　知嗣
+ * 更新日：2017年5月18日
+ * 更新者：浅田　知嗣
  */
 
 #include <string>
@@ -44,10 +46,8 @@ public:
 
 	//文字列表現を返却する関数を宣言。
 	std::string to_string () const;
-
-	//文字列を入力する関数を宣言。
-	//void for_string() const;
 };
 
 //挿入子を宣言。
-std::ostream& operator << (std::ostream& s, const Date& x);
+std::ostream& operator	<<(std::ostream& s, const Date& x);
+
