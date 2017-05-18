@@ -4,6 +4,8 @@
  * 作成者：浅田　知嗣
  * 更新日：2017年5月17日
  * 更新者：浅田　知嗣
+ * 更新日：2017年5月18日
+ * 更新者：浅田　知嗣
  */
 
 #include<iostream>
@@ -17,7 +19,8 @@ class Time
 
 //コンストラクタの定義。
 public:
-	Time(int hour, int minute, int secon) {
+	Time(int hour, int minute, int secon)
+	{
 		//秒にあたるseconに60以上または負の値が代入されたときに60秒未満の正の値に収めるため（60秒までなのでそれ以上は不正な値としてはじく）ための繰り返し。
 		for(; secon >= 60 || secon < 0; ) {
 
