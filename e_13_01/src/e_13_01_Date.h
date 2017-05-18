@@ -90,7 +90,302 @@ public:
 
 	//文字列表現を返却する関数の宣言（定義はe_13_01_Date.cppで行っている）。
 	std::string to_string() const;
+
+	//等価演算子==を定義。
+	friend bool operator==(const Date& x, const Date& y)
+	{
+		return x.y == y.y && x.m == y.m && x.d == y.d;
+	}
+
+	//等価演算子-=を定義。
+	friend bool operator!=(const Date& x, const Date& y)
+	{
+		return !(x == y);
+	}
+
+	//関係演算子>を&&と||を使わずに定義。
+	friend bool operator >(const Date& x, const Date& y)
+	{
+		int judge = 0;		//判定用の整数。
+
+		//おおきかった場合は1を返す。
+		if (x.y > y.y) {
+			judge = 1;
+		//同じだった場合は月の比較に移る。
+		} else if(x.y == y.y) {
+			//おおきかった場合は1を返す。
+			if(x.m > y.m) {
+				judge = 1;
+			//同じだった場合は日の比較に移る。
+			} else if (x.m == y.m) {
+				if(x.d < y.d) {
+					judge =1;
+				}
+			}
+		}
+
+		//判定の終わった数値が入る。
+		return judge;
+	}
+
+	//関係演算子>=を&&と||を使わずに定義。
+	friend bool operator>=(const Date& x, const Date& y)
+	{
+		int judge = 0;		//判定用の整数。
+
+		//おおきかった場合は1を返す。
+		if (x.y > y.y) {
+			judge = 1;
+		//同じだった場合は月の比較に移る。
+		} else if(x.y == y.y) {
+			//おおきかった場合は1を返す。
+			if(x.m > y.m) {
+				judge = 1;
+			//同じだった場合は日の比較に移る。
+			} else if (x.m == y.m) {
+				if(x.d <= y.d) {
+					judge =1;
+				}
+			}
+		}
+
+		//判定の終わった数値が入る。
+		return judge;
+	}
+
+	//関係演算子<を&&と||を使わずに定義。
+	friend bool operator <(const Date& x, const Date& y)
+	{
+		int judge = 0;		//判定用の整数。
+
+		//小さかった場合は1を返す。
+		if (x.y < y.y) {
+			judge = 1;
+		//同じだった場合は月の比較に移る。
+		} else if(x.y == y.y) {
+			//小さかった場合は1を返す。
+			if(x.m < y.m) {
+				judge = 1;
+			//同じだった場合は日の比較に移る。
+			} else if (x.m == y.m) {
+				if(x.d < y.d) {
+					judge =1;
+				}
+			}
+		}
+
+		//判定の終わった数値が入る。
+		return judge;
+	}
+
+	//関係演算子<=を&&と||を使わずに定義。
+	friend bool operator<=(const Date& x, const Date& y)
+	{
+		int judge = 0;		//判定用の整数。
+
+		//小さかった場合は1を返す。
+		if (x.y < y.y) {
+			judge = 1;
+			//同じだった場合は月の比較に移る。
+		} else if(x.y == y.y) {
+			//小さかった場合は1を返す。
+			if(x.m < y.m) {
+				judge = 1;
+				//同じだった場合は日の比較に移る。
+			} else if (x.m == y.m) {
+				//同じか小さかった時は1を返す。
+				if(x.d <= y.d) {
+					judge =1;
+				}
+			}
+		}
+
+		//判定の終わったら返す。
+		return judge;
+	}
+
+	//減算演算子-を定義(Date - Date)。
+	friend Date operator-(Date& x,Date& y)
+	{
+		//減算した結果が1より小さくなる時。
+		if(x.d - y.d < 1) {
+
+			x.m--;								//月を一つ減らし、
+			x.d += days_of_month(x.y, x.m);		//前の月の日数を加算する(前の月の日数を求める関数は（e_13_01_Date.cppにて定義）。
+		}
+
+		if(x.m - y.m < 1) {
+
+			x.y--;		//年数を一つ減らし、
+			x.m += 12;	//月に12を加算する。。
+		}
+		//最後に処理し終わった値で計算を行う。
+		//もし年数の部分が負になる場合はあえてそのまま残すこととする。
+		return Date(x.y - y.y, x.m - y.m, x.d - y.d);
+	}
+
+	//前置増分演算子++を定義。
+	Date& operator++() {
+		d++;			//日付を1加算する。
+
+		//日付がその年月に対応した値に収まるように月と年を調整する。
+		if(d > days_of_month(y, m)) {
+			m++;		//月を一つ加算し、
+			d = 1;		//1に戻す。
+		}
+
+		if(m > 12) {
+
+			y++;		//年数を一つ加算し、
+			m -= 12;	//月に12を減算する。
+		}
+		return *this;
+	}
+
+	//後置増分演算子++を定義。
+	Date operator++(int) {
+		Date x = *this;		//適当なDate型の変数へこの関数を呼び出したときのオブジェクトの値を保存する。
+		d++;
+		if(d > days_of_month(y, m)) {
+			m++;		//月を一つ加算し、
+			d = 1;		//日にちを1に戻す。
+		}
+
+		if(m > 12) {
+
+			y++;		//年数を一つ加算し、、
+			m -= 12;	//月から12を減算する。
+		}
+		//保存していた値を返却する。内部的には加算されているが返されるのは呼び出したときの数字ということになる。
+		return x;
+	}
+
+	//前置減分演算子--を定義。
+	Date& operator--() {
+	d--;
+	if(d < 1) {
+		m--;							//月を一つ減算し、
+		d += days_of_month(y, m);		//前の月の日数を加算する(前の月の日数を求める関数は（e_13_01_Date.cppにて定義）。
+	}
+
+	if(m < 1) {
+
+		y--;		//年数を一つ減らし、
+		m = 12;		//月を12にする。。
+	}
+
+	//処理し終わった値を返却する。
+	return *this;
+	}
+
+	//後置減分演算子--を定義。
+	Date operator--(int) {
+		Date x = *this;		//適当なDate型の変数へこの関数を呼び出したときのオブジェクトの値を保存する。
+		d--;
+		if(d < 1) {
+			m--;							//月を一つ減算し、
+			d += days_of_month(y, m);		//前の月の日数を加算する(前の月の日数を求める関数は（e_13_01_Date.cppにて定義）。
+		}
+
+		if(m < 1) {
+
+			y--;		//年数を一つ減らし、
+			m = 12;		//月を12にする。。
+		}
+
+		//保存していた値を返却する。内部的には減算されているが返されるのは呼び出したときの数字ということになる。
+		return x;
+	}
+
+	//複合代入演算子+=を定義。
+	Date& operator+=(const Date& x)
+	{
+		d += x.d;
+
+		for( ;d > days_of_month(y, m); ) {
+			//減算した結果が1より小さくなる時。
+			if(d > days_of_month(y, m)) {
+				m++;		//月を一つ加算し、
+				d = 1;		//日にちを1に戻す。
+			}
+
+			if(m > 12) {
+
+				y++;		//年数を一つ加算し、、
+				m -= 12;	//月から12を減算する。
+			}
+		}
+		//最後に処理し終わった値で計算を行う。
+		//もし年数の部分が負になる場合はあえてそのまま残すこととする。
+		return *this;
+	}
+
+	//複合代入演算子-=を定義。
+	Date& operator-=(const Date& x)
+	{
+		d -= x.d;
+
+		for( ;d < 1; ) {
+			//減算した結果が1より小さくなる時。
+			if(d < 1) {
+				m--;							//月を一つ減算し、
+				d += days_of_month(y, m);		//前の月の日数を加算する(前の月の日数を求める関数は（e_13_01_Date.cppにて定義）。
+			}
+
+			if(m < 1) {
+
+				y--;		//年数を一つ減らし、
+				m = 12;		//月を12にする。。
+			}
+		}
+		//最後に処理し終わった値で計算を行う。
+		//もし年数の部分が負になる場合はあえてそのまま残すこととする。
+		return *this;
+	}
+
+	//加算演算子+を定義(Date + int)。
+	friend Date operator+(Date& x,int n)
+	{
+		//加算した結果がその月に対応した日数より大きい限り繰り返す。
+		for( ; x.d + n > days_of_month(x.y, x.m); ) {
+			//for文は前判定なので、ここに落ちてくるということはif(x.d + n > days_of_month(x.y, x.m))をかならず満たしているのでここはif文なし。
+			x.d -= days_of_month(x.y, x.m);		//前の月の日数を加算する(前の月の日数を求める関数は（e_13_01_Date.cppにて定義）。
+			x.m++;								//月を一つ加算する。
+
+			if(x.m > 12) {
+
+				x.y++;		//年数を一つ加算し、
+				x.m = 1;	//月を1にする。。
+			}
+		}
+		//最後に処理し終わった値で計算を行う。
+		//もし年数の部分が負になる場合はあえてそのまま残すこととする。
+		return Date(x.y, x.m, x.d + n);
+	}
+
+	//加算演算子-を定義(Date - int)。
+		friend Date operator-(Date& x,int n)
+		{
+			//減算した結果が1より小さくになる限り繰り返す。
+			for( ; x.d - n < 1; ) {
+				//for文は前判定なので、ここに落ちてくるということはif(x.d - n < 1)をかならず満たしているのでここはif文なし。
+				x.m--;								//月を一つ減算する。
+				x.d += days_of_month(x.y, x.m);		//前の月の日数を加算する(前の月の日数を求める関数は（e_13_01_Date.cppにて定義）。
+
+				if(x.m > 12) {
+
+					x.y--;		//年数を一つ減算する。し、
+					x.m = 12;	//月を1にする。
+				}
+			}
+			//最後に処理し終わった値で計算を行う。
+			//もし年数の部分が負になる場合はあえてそのまま残すこととする。
+			return Date(x.y, x.m, x.d - n);
+		}
+
 };
+
+
 
 //挿入子の宣言（定義はe_13_01_Date.cppで行っている）。
 std::ostream& operator<<(std::ostream& s, const Date& x);
