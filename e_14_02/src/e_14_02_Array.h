@@ -14,39 +14,12 @@ class IntArray
 	int*	vec;			//先頭要素へのポインタ。
 
 public:
-	//エラーを検出するためのクラスの定義。
-	class IdxRngErr {
-	private:
-		IntArray*	ident;		//エラーが出た場所へのポインタ。
-		int			idx;		//エラーが出た要素。
-	public:
-		IdxRngErr(IntArray* p, int i) : ident(p), idx(i) {}
-
-		//エラーが出た配列の要素数を返す。
-		int index()
-		{
-			return idx;
-		}
-	};
 
 	//明示的コンストラクタの定義。
 	explicit IntArray(int size) : nelem(size) {vec = new int[nelem];}
 
-	//コピーコンストラクタの定義。
-	IntArray(const IntArray& x)
-	{
-		//もし代入元が同じものが呼び出されたら
-	//	if(&x == this) {
-		//	nelem = 0;
-		//	vec = 0;
-	//	} else {
-			nelem = x.nelem;
-			vec = new int[nelem];
-			for(int i = 0; i < nelem; i++) {
-				vec[i] = x.vec[i];
-			}
-		}
-	}
+	//コピーコンストラクタの宣言。
+	IntArray(const IntArray& x);
 
 	//デストラクタの定義。
 	~IntArray()
@@ -66,11 +39,6 @@ public:
 	//添字演算子[]
 	int& operator[](int i)
 	{
-		if(i < 0 || i >= nelem) {
-
-			//添字範囲エラーを送出。
-			throw IdxRngErr(this, i);
-		}
 		return vec[i];
 	}
 };
