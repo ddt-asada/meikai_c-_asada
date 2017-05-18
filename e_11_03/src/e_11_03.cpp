@@ -2,6 +2,10 @@
  * 時・分・秒のデータメンバで構成される時刻クラスに挿入子と抽出子を追加して作成せよ。
  * 作成日：2017年5月16日
  * 作成者：浅田　知嗣
+ * 更新日：2017年5月17日
+ * 更新者：浅田　知嗣
+ * 更新日：2017年5月18日
+ * 更新者：浅田　知嗣
  */
 
 #include <iostream>
@@ -14,11 +18,11 @@ using namespace std;
 int main()
 {
 	//挿入子を追加。
-	const Time clock(23,25,22);
+	Time clock(23,25,22);
 	//clockの表示。
 	//cout	<<"clock："	<<clock	<<"\n";
 	//clockの文字列表現。
-	cout	<<"clockの文字列表現：\""	<<clock.to_string()	<<"\"\n";
+	cout	<<"clockの文字列表現：\n"	<<clock.to_string()	<<"\n";
 
 	//抽出子を追加。
 	string st = "21/23/28";	//入力される文字。
