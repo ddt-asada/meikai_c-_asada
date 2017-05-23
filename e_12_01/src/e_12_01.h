@@ -62,12 +62,12 @@ public:
 	//後置減分演算子から前置演算子関数を呼び出す。
 	Counter& operator--()
 		{
-		//デクリメント前の値を保存。
-		Counter x = *this;
 		//カウンタの下限を0とするためのif文。
 		if(cnt > 0 ) {
 			cnt--;
 		}
+		//デクリメント後の値を保存。
+		Counter x = *this;
 		//保存していた値を返却。
 		return x;
 		}
