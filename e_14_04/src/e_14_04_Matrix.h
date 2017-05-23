@@ -4,6 +4,8 @@
  * 作成者：浅田　知嗣
  * 更新日：2017年5月22日
  * 更新者：浅田　知嗣
+ * 更新日：2017年5月22日
+ * 更新者：浅田　知嗣
  */
 
 #ifndef ___Class_Matrix
@@ -22,14 +24,14 @@ public:
 
 	//コピーコンストラクタの宣言。
 	Matrix(const Matrix &x);
-/*
+
 	//デストラクタの宣言。
 	~Matrix()
 	{
-		delete [] ptr;
 		delete [] *ptr;
+		delete [] ptr;
 	}
-*/
+
 	//行数のゲッタ。
 	int height_size()
 	{

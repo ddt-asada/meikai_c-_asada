@@ -4,6 +4,8 @@
  * 作成者：浅田　知嗣
  * 更新日：2017年5月22日
  * 更新者：浅田　知嗣
+ * 更新日：2017年5月22日
+ * 更新者：浅田　知嗣
  */
 
 
@@ -17,8 +19,8 @@ using namespace std;
 //通常のコンストラクタ
 Matrix::Matrix(int h, int w):height(h), width(w)
 {
-	ptr = new double*[h];				//要素数hの配列を生成。行列の行に当たる部分。
-	*ptr = new double[h * w];			//行列の全要素分の要素数をもつ配列を生成。
+	ptr = new double*[h + 1];				//要素数hの配列を生成。行列の行に当たる部分。
+	*ptr = new double[(h + 1) * (w + 1)];			//行列の全要素分の要素数をもつ配列を生成。
 
 	//ポインタptr（行に当たる部分）が指す先を列数の数だけ先に進める。
 	for(int i = 1; i <= h; i++) {
@@ -41,8 +43,8 @@ Matrix::Matrix(const Matrix &x)
 	width = x.width;			//列数をコピー。
 
 	//  配列のメモリ領域を動的に確保
-	ptr = new double*[height];			//行列の行に当たる部分の生成。
-	*ptr = new double[height*width];		//行列の全要素分の配列を生成。
+	ptr = new double*[height + 1];			//行列の行に当たる部分の生成。
+	*ptr = new double[(height + 1) * (width + 1)];		//行列の全要素分の配列を生成。
 
 	//ポインタptr（行に当たる部分）が指す先を列数の数だけ進める。
 	for(int i = 1; i <= height; i++) {
