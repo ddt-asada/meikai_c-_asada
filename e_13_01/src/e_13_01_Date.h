@@ -48,7 +48,7 @@ public:
 		 * ・年が100で割り切れる年は平年。
 		 * ・400で割り切れる年は閏年とする。
 		 */
-		return year % 4 == 0 && year % 100 != 0 || year % 400 == 0;
+		return (year % 4 == 0 && year % 100 != 0) || year % 400 == 0;
 	}
 
 	//年を返却する関数。
@@ -298,15 +298,15 @@ public:
 	}
 
 	//複合代入演算子+=を定義。
-	Date& operator+=(const Date& x)
+	Date& operator+=(int x)
 	{
-		d += x.d;
+		d += x;
 
 		for( ;d > days_of_month(y, m); ) {
 			//減算した結果が1より小さくなる時。
 			if(d > days_of_month(y, m)) {
-				m++;		//月を一つ加算し、
-				d = 1;		//日にちを1に戻す。
+				d -= days_of_month(y, m);	//日にちを1に戻す。
+				m++;						//月を一つ加算し、
 			}
 
 			if(m > 12) {
@@ -321,9 +321,9 @@ public:
 	}
 
 	//複合代入演算子-=を定義。
-	Date& operator-=(const Date& x)
+	Date& operator-=(int x)
 	{
-		d -= x.d;
+		d -= x;
 
 		for( ;d < 1; ) {
 			//減算した結果が1より小さくなる時。

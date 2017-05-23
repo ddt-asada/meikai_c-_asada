@@ -31,7 +31,7 @@ int main()
 	int	test;					//のちの演算子の動作確認で使う用の変数の型。
 	Date today;					//デフォルトコンストラクタを呼び出し今日の日付を取得。
 	Date defau;					//初期化用の呼び出し。
-	Date testday(2010, 552342, 3525229);	//適当な日付を入力。
+	Date testday(2000, 4, 4);	//適当な日付を入力。
 
 	//呼び出された日付の確認。
 	cout	<<"今　日の日付："	<<today													<<'\n';
@@ -50,11 +50,7 @@ int main()
 	//閏年かどうかを判定する関数を呼び出して表示し、確認。
 	cout	<<"今年は閏年"		<<(today.leap_year() ? "です。" : "ではありません。")	<<'\n';
 
-	int	y;
-
-	//任意の年数の入力を促す。
-	cout	<<"西暦年：";
-	//cin		>>y;
+	int	y = 2000;
 
 	//入力した年が閏年かどうかを判定。
 	cout	<<"その年は閏年"	<<(Date::leap_year(y) ? "です。" : "ではありません。")	<<'\n';
@@ -79,7 +75,8 @@ int main()
 	cout	<<today	<<"と"	<<testday	<<(today <= testday ? "はtodayの方が小さいです。" : "はtestdayの方が小さいです。")	<<'\n';
 
 	//2項-演算子を呼び出す。
-	cout	<<today	<<"と"	<<testday	<<"の差をもとめます。結果は"<<today - testday	<<"です。\n";
+	cout	<<today	<<"と"	<<testday	<<"の差をもとめます。\n";
+	cout	<<"結果は"<<today - testday	<<"です。\n";
 
 	//計算が終わったら一度初期化する。これ以降はtodayとtestdayは両方とも演算子のテストをしやすいように現在年月日で初期化。
 	today = testday = defau;
