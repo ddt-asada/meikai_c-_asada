@@ -15,6 +15,26 @@ class IntArray
 
 public:
 
+	//添字範囲エラーを検出するためのクラス。
+	class IdxRngErr
+	{
+	private:
+		//クラスの定義。
+		IntArray* ident;
+		int idx;
+
+	public:
+		IdxRngErr(IntArray* p, int i) : ident(p), idx(i){}
+		//要素数を返す関数の定義。
+		int index()
+		{
+			return idx;
+		}
+	};
+
+	//デフォルトコンストラクタの宣言。
+	IntArray();
+
 	//明示的コンストラクタの定義。
 	explicit IntArray(int size) : nelem(size) {vec = new int[nelem];}
 
@@ -39,8 +59,14 @@ public:
 	//添字演算子[]
 	int& operator[](int i)
 	{
+		//データ数が要素数を超えていたら。
+		if(i < 0 || i >= nelem) {
+			throw IdxRngErr(this, i);	//添字範囲エラーを送出。
+		}
 		return vec[i];
 	}
+
+
 };
 
 #endif
