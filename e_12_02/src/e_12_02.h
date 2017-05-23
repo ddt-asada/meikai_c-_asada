@@ -47,7 +47,7 @@ public:
 
 	//vがFalseであればbool型のtureを、Trueであればbool型のfalseを返す関数。
 	bool operator!() const {
-		return v != True;
+		return (v == False);
 	}
 };
 

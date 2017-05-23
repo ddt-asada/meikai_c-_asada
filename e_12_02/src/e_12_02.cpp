@@ -4,6 +4,7 @@
  * 作成者：浅田　知嗣
  */
 
+#include <string>
 #include <iostream>
 #include "e_12_02.h"
 
@@ -37,7 +38,10 @@ int main()
 	cout	<<"bの値："	<<static_cast<const char*>(b)	<<'\n';
 
 	for(int i = 0; i < 8; i++) {
+		cout	<<"！演算子適用前：x["	<<i	<<"] = "	<<x[i]	<<'\n';
 
-		cout	<<"x["	<<i	<<"] = "<<!(x[i])	<<'\n';
+		x[i] = int(!x[i]);
+		//x[i]をbool型のTrueまたはFalseに変換する関数を呼び出し、その値をint型に戻した値を表示。
+		cout	<<"！演算子適用後：x["	<<i	<<"] = "	<<x[i]	<<'\n';
 	}
 }
