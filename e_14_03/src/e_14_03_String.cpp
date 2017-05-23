@@ -59,27 +59,35 @@ String String::operator+(const String& nm)
 {
 	//仮の配列を生成。
 	char* nmd;
+	//仮の配列の要素数は加算する二つの要素数の合計として生成する。
 	nmd = new char[len + nm.len];
 
+	//まず一つ目の配列を代入する（文字列の前半部分）。
 	for(int i = 0; i < len; i++) {
 		nmd[i] = ptr[i];
 	}
 
+	//二つ目の配列を代入する（文字列の後半部分）。
 	for(int i = 0; i < nm.len; i++) {
 		nmd[i + len] = nm.ptr[i];
 	}
 
+	//文字列の連結が終わった配列を返す。
 	return nmd;
 }
 
 
+//代入演算子の定義。
 void String::operator=(const String& cpy)
 {
+	//元の配列を削除する。
 	delete[] ptr;
 
+	//新たにコピー元と同じ要素数の配列を生成する。
 	len = cpy.len;
 	ptr = new char[len];
 
+	//コピー元の要素をコピーする。
 	for(int i = 0; i < len; i++) {
 		ptr[i] = cpy.ptr[i];
 	}
