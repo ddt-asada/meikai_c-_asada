@@ -18,7 +18,7 @@ int main()
 	Time now;
 
 	//任意の値を代入し、コンストラクタから呼び出す。
-	Time night(0, 30, 20);
+	Time night(123, 33410, 23120);
 
 	//nowの中身を確認する。
 	cout	<<"now："	<<now.to_string()	<<'\n';
@@ -27,7 +27,7 @@ int main()
 	cout	<<"night"	<<night.to_string()	<<'\n';
 
 	//代入演算子を適用する。
-	now += Time(2, 4, 1);
+	now += Time(2312, 4321, 1321);
 	night -= 10;
 
 	//nowの中身を確認する。
@@ -47,15 +47,6 @@ int main()
 		//等しくないと表示。
 		cout	<<"二つは等しくないです。\n";
 	}
-
-	//2項演算子を適用。
-	now = now + night;
-
-	//nowの中身を確認する。
-	cout	<<"now："	<<now.to_string()	<<'\n';
-
-	//nightの中身を確認する。
-	cout	<<"night"	<<night.to_string()	<<'\n';
 
 	/*
 	//抽出子を追加。
