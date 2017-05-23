@@ -2,6 +2,8 @@
  * デストラクタがデータメンバの逆順に呼び出されることを確認するためのプログラム。
  * 作成日：2017年5月18日
  * 作成者：浅田　知嗣
+ * 更新日：2017年5月23日
+ * 更新者：浅田　知嗣
  */
 
 #include <iostream>
@@ -9,41 +11,38 @@
 using namespace std;
 
 //データメンバとコンストラクタのみを持つクラスを定義する。
-class Int
+class Test
 {
 	int	v;
 public:
 	//コンストラクタの定義。
-	Int(int val) : v(val)
+	Test(int val) : v(val)
 	{
 		//コンストラクタ初期化子の呼び出し順序を確認するための表示。
-		cout	<<v	<<'\n';
+		cout	<<	"生成："	<<v	<<'\n';
 	}
 
 	//でコンストラクタの定義。
-	~Int()
+	~Test()
 	{
 		//どのような順番でデータメンバが削除されるかを確認する。
-		cout	<<v	<<'\n';
+		cout	<<	"削除："	<<v	<<'\n';
 	}
 };
 
-//三つのデータメンバを持つクラスの定義。これを用いてどのような順番でコンストラクタが呼び出されて初期化されているかを確認する。
-class Abc
+class Num
 {
-	Int	a;
-	Int	b;
-	Int	c;
+	Test x;
+	Test y;
+	Test z;
+public:Num(int xx, int yy, int zz):x(xx), y(yy),z(zz){}
 
-public:
-	//データメンバの並びと初期化子の並びを反対にしてある。これからデータメンバの並びとコンストラクタ初期化子の並びのどちらの順で初期化されるかを確認する。
-	Abc(int aa, int bb, int cc) : c(cc), b(bb), a(aa){}
 };
 
 int main()
 {
 	//データメンバを呼び出す。
-	Abc x(1, 2, 3);
+	Num x(1, 2, 3);
 
 	//0を返す。
 	return 0;
